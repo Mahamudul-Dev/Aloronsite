@@ -1,0 +1,177 @@
+{
+  "_note1": "KEEP THIS FILE! Check it into a version control system (VCS) like git.",
+  "_note2": "ObjectBox manages crucial IDs for your object model. See docs for details.",
+  "_note3": "If you have VCS merge conflicts, you must resolve them according to ObjectBox docs.",
+  "entities": [
+    {
+      "id": "1:6711357432305510592",
+      "lastPropertyId": "30:2241692046563548154",
+      "name": "User",
+      "properties": [
+        {
+          "id": "1:4172464881118807149",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:1430364085050295372",
+          "name": "user_id",
+          "type": 9
+        },
+        {
+          "id": "3:2445907045795451445",
+          "name": "user",
+          "type": 9
+        },
+        {
+          "id": "4:682353429280406058",
+          "name": "active",
+          "type": 6
+        },
+        {
+          "id": "5:3318360336948147347",
+          "name": "user_porikkito_chk",
+          "type": 9
+        },
+        {
+          "id": "6:9134423902222611652",
+          "name": "develop_mg",
+          "type": 9
+        },
+        {
+          "id": "7:119612715617904207",
+          "name": "operation_mg",
+          "type": 9
+        },
+        {
+          "id": "8:6005899883652803392",
+          "name": "area_manage",
+          "type": 9
+        },
+        {
+          "id": "9:8260257764590372688",
+          "name": "md",
+          "type": 9
+        },
+        {
+          "id": "10:7543453720407785670",
+          "name": "member",
+          "type": 9
+        },
+        {
+          "id": "11:2876234601899048393",
+          "name": "name",
+          "type": 9
+        },
+        {
+          "id": "12:6349454692383910262",
+          "name": "last_name",
+          "type": 9
+        },
+        {
+          "id": "13:407170219022643543",
+          "name": "user_photo",
+          "type": 9
+        },
+        {
+          "id": "14:7260243635833060552",
+          "name": "email",
+          "type": 9
+        },
+        {
+          "id": "15:3851324077867976367",
+          "name": "mobile",
+          "type": 9
+        },
+        {
+          "id": "16:6700471312478747147",
+          "name": "address",
+          "type": 9
+        },
+        {
+          "id": "17:6796319615675211418",
+          "name": "kromic2",
+          "type": 6
+        },
+        {
+          "id": "18:6124310830186176212",
+          "name": "plus_amount",
+          "type": 6
+        },
+        {
+          "id": "19:2742370352930274697",
+          "name": "minus_amount",
+          "type": 6
+        },
+        {
+          "id": "20:303801175431788819",
+          "name": "organization",
+          "type": 9
+        },
+        {
+          "id": "21:7917994968566331975",
+          "name": "designation",
+          "type": 9
+        },
+        {
+          "id": "22:1403563874763693855",
+          "name": "br_code",
+          "type": 9
+        },
+        {
+          "id": "23:7923004321113844225",
+          "name": "dol_code",
+          "type": 9
+        },
+        {
+          "id": "24:9152164614449077081",
+          "name": "pack",
+          "type": 9
+        },
+        {
+          "id": "25:8549009295396329603",
+          "name": "date",
+          "type": 9
+        },
+        {
+          "id": "26:8022401776974895137",
+          "name": "time",
+          "type": 9
+        },
+        {
+          "id": "27:591636829588324267",
+          "name": "zxc",
+          "type": 9
+        },
+        {
+          "id": "28:4001185398899378418",
+          "name": "branch",
+          "type": 9
+        },
+        {
+          "id": "29:2339171841070674561",
+          "name": "chk_2",
+          "type": 9
+        },
+        {
+          "id": "30:2241692046563548154",
+          "name": "password",
+          "type": 9
+        }
+      ],
+      "relations": []
+    }
+  ],
+  "lastEntityId": "1:6711357432305510592",
+  "lastIndexId": "0:0",
+  "lastRelationId": "0:0",
+  "lastSequenceId": "0:0",
+  "modelVersion": 5,
+  "modelVersionParserMinimum": 5,
+  "retiredEntityUids": [],
+  "retiredIndexUids": [],
+  "retiredPropertyUids": [],
+  "retiredRelationUids": [],
+  "version": 1
+}

@@ -1,10 +1,16 @@
+import 'package:aloronsite/app/data/utils.dart';
 import 'package:aloronsite/app/styles/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 import 'app/routes/app_pages.dart';
+import 'database/objectbox_db/objectbox_singleton.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await GetStorage.init();
+  await ObjectBoxSingleton().initObjectBox();
   runApp(const Aloronsite());
 }
 
@@ -19,7 +25,7 @@ class Aloronsite extends StatelessWidget {
         splitScreenMode: true,
         builder: (context, child) {
           return GetMaterialApp(
-            title: "Aloronsite",
+            title: APP_NAME,
             theme: defaultTheme,
             debugShowCheckedModeBanner: false,
             defaultTransition: Transition.rightToLeftWithFade,
@@ -30,4 +36,3 @@ class Aloronsite extends StatelessWidget {
     );
   }
 }
-

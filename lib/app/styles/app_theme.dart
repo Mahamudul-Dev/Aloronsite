@@ -21,7 +21,7 @@ ThemeData defaultTheme = ThemeData(
       labelMedium: TextStyle(
           fontSize: 16.sp, fontFamily: 'Roboto', fontWeight: FontWeight.w800),
       labelSmall: TextStyle(
-          fontSize: 14.sp, fontFamily: 'Roboto', fontWeight: FontWeight.w800),
+          fontSize: 14.sp, fontFamily: 'Roboto', fontWeight: FontWeight.w600),
       bodyMedium: TextStyle(fontSize: 14.sp, fontFamily: 'Roboto'),
       bodySmall: TextStyle(fontSize: 12.sp, fontFamily: 'Roboto'),
     ));
