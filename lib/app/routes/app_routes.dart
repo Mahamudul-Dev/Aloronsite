@@ -5,14 +5,16 @@ abstract class Routes {
   Routes._();
   static const HOME = _Paths.HOME;
   static const LOGIN = _Paths.LOGIN;
-  static const SEARCH_COLLECTION = _Paths.SEARCH_COLLECTION;
-  static const SODOSSO_SHEET = _Paths.SODOSSO_SHEET;
+  static const COLLECTION_SHEET = _Paths.COLLECTION_SHEET;
+  static const UPLOAD_LIST = _Paths.UPLOAD_LIST;
+  static const DASHBOARD = _Paths.DASHBOARD;
 }
 
 abstract class _Paths {
   _Paths._();
   static const HOME = '/home';
   static const LOGIN = '/login';
-  static const SEARCH_COLLECTION = '/search-collection';
-  static const SODOSSO_SHEET = '/sodosso-sheet';
+  static const COLLECTION_SHEET = '/collection-sheet';
+  static const UPLOAD_LIST = '/upload-list';
+  static const DASHBOARD = '/dashboard';
 }

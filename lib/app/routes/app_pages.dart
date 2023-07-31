@@ -1,21 +1,24 @@
-import 'package:aloronsite/service/auth_service.dart';
 import 'package:get/get.dart';
 
+import '../../service/auth_service.dart';
+import '../modules/collection_sheet/bindings/collection_sheet_binding.dart';
+import '../modules/collection_sheet/views/collection_sheet_view.dart';
+import '../modules/dashboard/bindings/dashboard_binding.dart';
+import '../modules/dashboard/views/dashboard_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/login/bindings/login_binding.dart';
 import '../modules/login/views/login_view.dart';
-import '../modules/search_collection/bindings/search_collection_binding.dart';
-import '../modules/search_collection/views/search_collection_view.dart';
-import '../modules/sodosso_sheet/bindings/sodosso_sheet_binding.dart';
-import '../modules/sodosso_sheet/views/sodosso_sheet_view.dart';
+import '../modules/upload_list/bindings/upload_list_binding.dart';
+import '../modules/upload_list/views/upload_list_view.dart';
 
 part 'app_routes.dart';
 
 class AppPages {
   AppPages._();
 
-  static final INITIAL = AuthService().checkLogin() ? Routes.HOME : Routes.LOGIN;
+  static final INITIAL =
+      AuthService().checkLogin() ? Routes.HOME : Routes.LOGIN;
 
   static final routes = [
     GetPage(
@@ -29,14 +32,19 @@ class AppPages {
       binding: LoginBinding(),
     ),
     GetPage(
-      name: _Paths.SEARCH_COLLECTION,
-      page: () => const SearchCollectionView(),
-      binding: SearchCollectionBinding(),
+      name: _Paths.COLLECTION_SHEET,
+      page: () => const CollectionSheetView(),
+      binding: CollectionSheetBinding(),
     ),
     GetPage(
-      name: _Paths.SODOSSO_SHEET,
-      page: () => const SodossoSheetView(),
-      binding: SodossoSheetBinding(),
+      name: _Paths.UPLOAD_LIST,
+      page: () => const UploadListView(),
+      binding: UploadListBinding(),
+    ),
+    GetPage(
+      name: _Paths.DASHBOARD,
+      page: () => const DashboardView(),
+      binding: DashboardBinding(),
     ),
   ];
 }

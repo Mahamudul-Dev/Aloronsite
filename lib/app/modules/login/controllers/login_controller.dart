@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 import 'package:logger/logger.dart';
+
 import '../../../routes/app_pages.dart';
 
 class LoginController extends GetxController {
@@ -17,23 +18,23 @@ class LoginController extends GetxController {
   RxBool isLoading = false.obs;
 
   void login() async {
-
     if (usernameController.text.isEmpty) {
       Get.snackbar('Opps', 'Please enter your username');
     } else if (passwordController.text.isEmpty) {
       Get.snackbar('Opps', 'Please enter your password');
     } else {
-
-      try{
+      try {
         isLoading.value = true;
-        Map<String,String> loginInfo = {
-          "userName":usernameController.text,
-          "password":passwordController.text
+        Map<String, String> loginInfo = {
+          "userName": usernameController.text,
+          "password": passwordController.text
         };
 
         Logger().i(loginInfo);
-        final response = await http.post(Uri.parse(BASE_URL+LOGIN),headers: headers, body: jsonEncode(loginInfo));
-        if (response.statusCode == 200){
+        final response = await http.post(Uri.parse(BASE_URL + LOGIN),
+            headers: headers, body: jsonEncode(loginInfo));
+
+        if (response.statusCode == 200) {
           final result = LoginResModel.fromJson(jsonDecode(response.body));
           CacheDb().saveLoginInfo(true);
           ObjectboxHelper().saveUser(result);
@@ -45,11 +46,10 @@ class LoginController extends GetxController {
           Logger().e(response.body);
           Get.snackbar('Sorry!', response.body);
         }
-      } catch (e){
+      } catch (e) {
         isLoading.value = false;
         Logger().e(e);
       }
-
     }
   }
 }

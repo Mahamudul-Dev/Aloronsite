@@ -6,15 +6,19 @@ class OutlineInputBox extends StatefulWidget {
       {super.key,
       required this.label,
       required this.hint,
-      required this.prefixIcon,
-      this.controller, this.passwordField = false, required this.keyboardType});
+      this.prefixIcon,
+      this.controller,
+      this.passwordField = false,
+      required this.keyboardType,
+      this.suffix});
 
   final String label;
   final String hint;
-  final IconData prefixIcon;
+  final IconData? prefixIcon;
   final TextEditingController? controller;
   final bool passwordField;
   final TextInputType keyboardType;
+  final Widget? suffix;
 
   @override
   State<OutlineInputBox> createState() => _OutlineInputBoxState();
@@ -30,10 +34,19 @@ class _OutlineInputBoxState extends State<OutlineInputBox> {
       keyboardType: widget.keyboardType,
       obscureText: widget.passwordField ? passSwitch : false,
       decoration: InputDecoration(
-          prefixIcon: Icon(widget.prefixIcon),
-          suffixIcon: widget.passwordField ? IconButton(onPressed: (){setState(() {
-            passSwitch = !passSwitch;
-          });}, icon: Icon(passSwitch? CupertinoIcons.eye_fill : CupertinoIcons.eye_slash_fill)) : null,
+          prefixIcon:
+              widget.prefixIcon != null ? Icon(widget.prefixIcon) : null,
+          suffixIcon: widget.passwordField
+              ? IconButton(
+                  onPressed: () {
+                    setState(() {
+                      passSwitch = !passSwitch;
+                    });
+                  },
+                  icon: Icon(passSwitch
+                      ? CupertinoIcons.eye_fill
+                      : CupertinoIcons.eye_slash_fill))
+              : widget.suffix,
           hintText: widget.hint,
           hintStyle: Theme.of(context)
               .textTheme

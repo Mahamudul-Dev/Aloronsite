@@ -1,9 +1,11 @@
+import 'package:aloronsite/app/data/language.dart';
 import 'package:aloronsite/app/data/utils.dart';
 import 'package:aloronsite/app/styles/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+
 import 'app/routes/app_pages.dart';
 import 'database/objectbox_db/objectbox_singleton.dart';
 
@@ -25,14 +27,15 @@ class Aloronsite extends StatelessWidget {
         splitScreenMode: true,
         builder: (context, child) {
           return GetMaterialApp(
-            title: APP_NAME,
-            theme: defaultTheme,
-            debugShowCheckedModeBanner: false,
-            defaultTransition: Transition.rightToLeftWithFade,
-            initialRoute: AppPages.INITIAL,
-            getPages: AppPages.routes
-          );
-        }
-    );
+              title: APP_NAME,
+              translations: Languages(),
+              locale: const Locale('en', 'US'),
+              fallbackLocale: const Locale('en', 'US'),
+              theme: defaultTheme,
+              debugShowCheckedModeBanner: false,
+              defaultTransition: Transition.rightToLeftWithFade,
+              initialRoute: AppPages.INITIAL,
+              getPages: AppPages.routes);
+        });
   }
 }

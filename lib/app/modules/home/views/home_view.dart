@@ -1,9 +1,8 @@
-import 'package:aloronsite/app/data/utils.dart';
+import 'package:aloronsite/app/routes/app_pages.dart';
+import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
 import 'package:flutter/material.dart';
-
 import 'package:get/get.dart';
 
-import '../../../widgets/profile_card.dart';
 import '../controllers/home_controller.dart';
 
 class HomeView extends GetView<HomeController> {
@@ -11,15 +10,25 @@ class HomeView extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Dashboard'),
+      body: Obx(() => controller.screens[controller.activeIndex.value]),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Theme.of(context).primaryColor,
+        onPressed: () => Get.toNamed(Routes.COLLECTION_SHEET),
+        child: Icon(
+          Icons.add,
+          color: Theme.of(context).scaffoldBackgroundColor,
+        ),
       ),
-      body: ListView(
-        padding: const EdgeInsets.all(20),
-        children: [
-          ProfileCard(name: controller.getCurrentUser().user, designation: controller.getCurrentUser().designation, areaManage: controller.getCurrentUser().area_manage, phone: controller.getCurrentUser().mobile, branch: controller.getCurrentUser().branch, userPhoto: controller.getCurrentUser().user_photo == "" ? PLACEHOLDER_IMAGE : controller.getCurrentUser().user_photo)
-        ],
-      )
+      bottomNavigationBar: AnimatedBottomNavigationBar(
+          icons: controller.bottomBarIconList,
+          activeIndex: controller.activeIndex.value,
+          gapLocation: GapLocation.center,
+          activeColor: Theme.of(context).primaryColor,
+          inactiveColor: Colors.grey.shade600,
+          notchSmoothness: NotchSmoothness.values[1],
+          onTap: (index) => controller.activeIndex.value = index),
+      //other params
     );
   }
 }
