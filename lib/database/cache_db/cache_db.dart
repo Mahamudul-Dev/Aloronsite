@@ -6,4 +6,13 @@ class CacheDb {
   void saveLoginInfo (bool loggedIn){
     cacheDB.write('login', loggedIn);
   }
+
+  void saveSheetStatus(bool status){
+    cacheDB.write('sheetStatus', status);
+  }
+
+  bool getSheetStatus(){
+   bool? status = cacheDB.read('sheetStatus');
+   return status ?? false;
+  }
 }

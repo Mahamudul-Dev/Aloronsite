@@ -1,5 +1,6 @@
 import 'package:aloronsite/app/data/models/CollectionSheetModel.dart';
 import 'package:aloronsite/app/modules/collection_sheet/views/search_dialog_view.dart';
+import 'package:aloronsite/database/cache_db/cache_db.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
@@ -16,8 +17,8 @@ class CollectionSheetView extends GetView<CollectionSheetController> {
           centerTitle: true,
         ),
         body: Obx(() {
-          return controller.isSheetLoaded.value
-              ? FutureBuilder(
+          return controller.isSheetLoaded.value || CacheDb().getSheetStatus()
+              ? FutureBuilder<List<CollectionSheetModel>>(
                   future: controller.getSheet(),
                   builder: (context,
                       AsyncSnapshot<List<CollectionSheetModel>> snapshot) {
@@ -25,10 +26,8 @@ class CollectionSheetView extends GetView<CollectionSheetController> {
                       return ListView.builder(
                           itemCount: snapshot.data?.length,
                           itemBuilder: (context, index) {
-                            return Container(
-                              height: 10,
-                              color: Colors.red,
-                              padding: const EdgeInsets.symmetric(vertical: 10),
+                            return ListTile(
+                              title: Text(snapshot.data![index].sodossoName??'noName'.tr),
                             );
                           });
                     } else if (snapshot.hasError) {
@@ -43,7 +42,7 @@ class CollectionSheetView extends GetView<CollectionSheetController> {
                       );
                     }
                   })
-              : SearchDialogView();
+              : const SearchDialogView();
         }));
   }
 }

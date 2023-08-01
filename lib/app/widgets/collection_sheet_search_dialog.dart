@@ -6,7 +6,6 @@ class CollectionSheetSearchDialog extends StatelessWidget {
       {super.key,
       required this.soCodeController,
       required this.dateController,
-      this.onSearch,
       this.onCalenderPressed,
       this.onDayPressed,
       this.daySelectedValue,
@@ -16,7 +15,6 @@ class CollectionSheetSearchDialog extends StatelessWidget {
   final TextEditingController dateController;
   final String? daySelectedValue;
   final List<DropdownMenuItem<String>>? dayList;
-  final void Function()? onSearch;
   final void Function()? onCalenderPressed;
   final void Function(String?)? onDayPressed;
 
@@ -26,7 +24,8 @@ class CollectionSheetSearchDialog extends StatelessWidget {
       padding: const EdgeInsets.all(20),
       child: Column(
         children: [
-          const OutlineInputBox(
+          OutlineInputBox(
+            controller: soCodeController,
               label: 'SO Code',
               hint: 'Type your so code here.',
               prefixIcon: Icons.account_box_rounded,
@@ -35,6 +34,7 @@ class CollectionSheetSearchDialog extends StatelessWidget {
             height: 10,
           ),
           OutlineInputBox(
+            controller: dateController,
               label: 'Date',
               hint: '',
               keyboardType: TextInputType.number,
