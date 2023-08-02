@@ -8,6 +8,7 @@ abstract class Routes {
   static const COLLECTION_SHEET = _Paths.COLLECTION_SHEET;
   static const UPLOAD_LIST = _Paths.UPLOAD_LIST;
   static const DASHBOARD = _Paths.DASHBOARD;
+  static const SONCHOY_SUBMIT = _Paths.SONCHOY_SUBMIT;
 }
 
 abstract class _Paths {
@@ -17,4 +18,5 @@ abstract class _Paths {
   static const COLLECTION_SHEET = '/collection-sheet';
   static const UPLOAD_LIST = '/upload-list';
   static const DASHBOARD = '/dashboard';
+  static const SONCHOY_SUBMIT = '/sonchoy-submit';
 }

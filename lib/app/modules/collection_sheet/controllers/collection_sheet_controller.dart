@@ -1,11 +1,11 @@
 import 'dart:convert';
-import 'dart:ffi';
 
 import 'package:aloronsite/app/data/models/CollectionSheetModel.dart';
+import 'package:aloronsite/app/routes/app_pages.dart';
 import 'package:aloronsite/database/cache_db/cache_db.dart';
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:http/http.dart' as http;
 import 'package:logger/logger.dart';
 
 import '../../../data/utils.dart';
@@ -19,6 +19,7 @@ class CollectionSheetController extends GetxController {
   RxBool isLoading = false.obs;
   RxBool isSheetLoaded = false.obs;
   RxBool isSheetComplete = false.obs;
+  final dio = Dio();
 
   List<DropdownMenuItem<String>> weekdays() {
     return [
@@ -66,7 +67,7 @@ class CollectionSheetController extends GetxController {
           data: ThemeData.light().copyWith(
             primaryColor: Colors.blue,
             buttonTheme:
-            const ButtonThemeData(textTheme: ButtonTextTheme.primary),
+                const ButtonThemeData(textTheme: ButtonTextTheme.primary),
           ),
           child: child!,
         );
@@ -74,31 +75,38 @@ class CollectionSheetController extends GetxController {
     );
 
     if (selectedDate != null && selectedDate != currentDate) {
-      dateController.value.text =
-          selectedDate.toString().substring(0, 10);
+      dateController.value.text = selectedDate.toString().substring(0, 10);
     }
   }
 
   Future<List<CollectionSheetModel>> getSheet() async {
     isLoading.value = true;
-    Map<String, dynamic> query = {"soCode": soCodeController.value.text, "collctionDay": selectedDay.value};
+    Map<String, dynamic> query = {
+      "soCode": soCodeController.value.text,
+      "collctionDay": selectedDay.value
+    };
     List<CollectionSheetModel> sheet = [];
+    sheet.clear();
     try {
-      final response =
-          await http.post(Uri.parse(BASE_URL + COLLECTION_SHEET), body: jsonEncode(query), headers: headers);
+      final response = await dio.post(BASE_URL + COLLECTION_SHEET,
+          data: jsonEncode(query),
+          options: Options(
+              contentType: 'application/json',
+              responseType: ResponseType.json));
+      Logger().i(response.data);
       if (response.statusCode == 200) {
         isLoading.value = false;
         isSheetLoaded.value = true;
         CacheDb().saveSheetStatus(isSheetLoaded.value);
-        final data = jsonDecode(response.body);
-        sheet.clear();
+        final data = response.data;
+
         for (Map i in data) {
           sheet.add(CollectionSheetModel.fromJson(i));
         }
         Logger().i(sheet.length);
         return sheet;
       } else {
-        Logger().e(response.body);
+        Logger().e(response.data);
         Get.snackbar('Opps!', 'An there was a error when loading data sheet');
         isLoading.value = false;
       }
@@ -109,5 +117,11 @@ class CollectionSheetController extends GetxController {
     }
     isLoading.value = false;
     return sheet;
+  }
+
+  void skipSheet() {
+    isSheetLoaded.value = false;
+    CacheDb().saveSheetStatus(isSheetLoaded.value);
+    Get.toNamed(Routes.HOME);
   }
 }
