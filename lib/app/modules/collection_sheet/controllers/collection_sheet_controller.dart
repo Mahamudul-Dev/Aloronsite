@@ -3,10 +3,13 @@ import 'dart:convert';
 import 'package:aloronsite/app/data/models/CollectionSheetModel.dart';
 import 'package:aloronsite/app/routes/app_pages.dart';
 import 'package:aloronsite/database/cache_db/cache_db.dart';
+import 'package:aloronsite/database/objectbox_db/collection_sheet_schema.dart';
+import 'package:aloronsite/database/objectbox_db/objectbox_helper.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:logger/logger.dart';
+import 'package:number_paginator/number_paginator.dart';
 
 import '../../../data/utils.dart';
 
@@ -14,6 +17,7 @@ class CollectionSheetController extends GetxController {
   final Rx<TextEditingController> soCodeController =
       TextEditingController().obs;
   final Rx<TextEditingController> dateController = TextEditingController().obs;
+  final dbHelper = ObjectboxHelper();
 
   RxString selectedDay = "Sat".obs;
   RxBool isLoading = false.obs;
@@ -79,14 +83,13 @@ class CollectionSheetController extends GetxController {
     }
   }
 
-  Future<List<CollectionSheetModel>> getSheet() async {
+  Future<List<CollectionSheetEntity>>? getSheet() async {
     isLoading.value = true;
     Map<String, dynamic> query = {
       "soCode": soCodeController.value.text,
       "collctionDay": selectedDay.value
     };
-    List<CollectionSheetModel> sheet = [];
-    sheet.clear();
+
     try {
       final response = await dio.post(BASE_URL + COLLECTION_SHEET,
           data: jsonEncode(query),
@@ -98,25 +101,26 @@ class CollectionSheetController extends GetxController {
         isLoading.value = false;
         isSheetLoaded.value = true;
         CacheDb().saveSheetStatus(isSheetLoaded.value);
-        final data = response.data;
 
-        for (Map i in data) {
-          sheet.add(CollectionSheetModel.fromJson(i));
+        for (Map i in response.data) {
+          Logger().d('Line 104: $i');
+          await dbHelper.saveCollectionSheet(CollectionSheetModel.fromJson(i));
+
         }
-        Logger().i(sheet.length);
-        return sheet;
+
+        return Future.value(dbHelper.getCollectionSheet());
       } else {
         Logger().e(response.data);
         Get.snackbar('Opps!', 'An there was a error when loading data sheet');
         isLoading.value = false;
       }
-      return sheet;
+      return Future.value(dbHelper.getCollectionSheet());
     } catch (e) {
       isLoading.value = false;
       Logger().e(e);
     }
     isLoading.value = false;
-    return sheet;
+    return Future.value(dbHelper.getCollectionSheet());
   }
 
   void skipSheet() {

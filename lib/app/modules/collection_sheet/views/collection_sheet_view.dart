@@ -3,9 +3,11 @@ import 'package:aloronsite/app/modules/collection_sheet/views/search_dialog_view
 import 'package:aloronsite/app/routes/app_pages.dart';
 import 'package:aloronsite/app/widgets/collection_item_view.dart';
 import 'package:aloronsite/database/cache_db/cache_db.dart';
+import 'package:aloronsite/database/objectbox_db/collection_sheet_schema.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
+import 'package:number_paginator/number_paginator.dart';
 
 import '../controllers/collection_sheet_controller.dart';
 
@@ -20,10 +22,10 @@ class CollectionSheetView extends GetView<CollectionSheetController> {
         ),
         body: Obx(() {
           return controller.isSheetLoaded.value || CacheDb().getSheetStatus()
-              ? FutureBuilder<List<CollectionSheetModel>>(
+              ? FutureBuilder<List<CollectionSheetEntity>>(
                   future: controller.getSheet(),
                   builder: (context,
-                      AsyncSnapshot<List<CollectionSheetModel>> snapshot) {
+                      AsyncSnapshot<List<CollectionSheetEntity>> snapshot) {
                     if (snapshot.hasData) {
                       return ListView.separated(
                         itemCount: snapshot.data!.length + 1,
@@ -127,9 +129,11 @@ class CollectionSheetView extends GetView<CollectionSheetController> {
                         },
                       );
                     } else if (snapshot.hasError) {
-                      return Text(
-                        'error'.tr,
-                        style: Theme.of(context).textTheme.bodySmall,
+                      return Center(
+                        child: Text(
+                          'error'.tr,
+                          style: Theme.of(context).textTheme.bodySmall,
+                        ),
                       );
                     } else {
                       return Center(
@@ -139,6 +143,8 @@ class CollectionSheetView extends GetView<CollectionSheetController> {
                     }
                   })
               : const SearchDialogView();
-        }));
+        }),
+    bottomNavigationBar: NumberPaginator(numberPages: 10),
+    );
   }
 }

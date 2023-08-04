@@ -65,7 +65,7 @@ class CollectionSheetModel {
     date = json['date'];
     soCode = json['so_code'];
     accountNo = json['account_no'];
-    opCode = json['op_code'];
+    opCode = json['op_code'] ;
     serial = json['serial'];
     sodossoName = json['sodosso_name'];
     sodossoStatus = json['sodosso_status'];

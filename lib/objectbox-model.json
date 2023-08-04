@@ -161,9 +161,318 @@
         }
       ],
       "relations": []
+    },
+    {
+      "id": "2:8235802978493852794",
+      "lastPropertyId": "60:9178974960165556408",
+      "name": "CollectionSheetEntity",
+      "properties": [
+        {
+          "id": "1:4344395541446824193",
+          "name": "id",
+          "type": 6,
+          "flags": 129
+        },
+        {
+          "id": "2:3117435533434099423",
+          "name": "date",
+          "type": 9
+        },
+        {
+          "id": "3:1205770801463449745",
+          "name": "soCode",
+          "type": 5
+        },
+        {
+          "id": "4:5655273713551473957",
+          "name": "accountNo",
+          "type": 9
+        },
+        {
+          "id": "5:2225744361086424039",
+          "name": "opCode",
+          "type": 9
+        },
+        {
+          "id": "6:8258008973300161015",
+          "name": "serial",
+          "type": 5
+        },
+        {
+          "id": "7:2582853333209112440",
+          "name": "sodossoName",
+          "type": 9
+        },
+        {
+          "id": "8:6574941556591419559",
+          "name": "sodossoStatus",
+          "type": 5
+        },
+        {
+          "id": "9:8241831387325613681",
+          "name": "pCode",
+          "type": 5
+        },
+        {
+          "id": "10:6982094718805792127",
+          "name": "collectionBar",
+          "type": 9
+        },
+        {
+          "id": "11:2564415181230228159",
+          "name": "sonchoyCollectionStatus",
+          "type": 5
+        },
+        {
+          "id": "12:5665712532915003125",
+          "name": "kistiCollectionStatus",
+          "type": 5
+        },
+        {
+          "id": "13:4327813667064721782",
+          "name": "gatewayCheckSonchoy",
+          "type": 5
+        },
+        {
+          "id": "14:1660684482716360377",
+          "name": "gatewayCheckKisti",
+          "type": 5
+        },
+        {
+          "id": "15:4951126433310227087",
+          "name": "sep22",
+          "type": 9
+        },
+        {
+          "id": "16:1825448245060958682",
+          "name": "chk",
+          "type": 5
+        },
+        {
+          "id": "17:5720261666718278355",
+          "name": "sonchoyBookBl",
+          "type": 5
+        },
+        {
+          "id": "18:1640621002601229958",
+          "name": "onlineSonchoyBl",
+          "type": 5
+        },
+        {
+          "id": "19:2625799165278846441",
+          "name": "sonchoyPorikkito",
+          "type": 9
+        },
+        {
+          "id": "20:8038606452604658242",
+          "name": "kistiBookBl",
+          "type": 5
+        },
+        {
+          "id": "21:8317889711953308442",
+          "name": "onlineKistiBl",
+          "type": 5
+        },
+        {
+          "id": "22:6048198988264469584",
+          "name": "kistiPorikkito",
+          "type": 9
+        },
+        {
+          "id": "23:5100954035546072725",
+          "name": "porikkhito",
+          "type": 9
+        },
+        {
+          "id": "24:926083496561515960",
+          "name": "sonchoy",
+          "type": 9
+        },
+        {
+          "id": "25:4078699145953796533",
+          "name": "kisti",
+          "type": 9
+        },
+        {
+          "id": "26:2024021199200360332",
+          "name": "profitOfPerInstallment",
+          "type": 5
+        },
+        {
+          "id": "27:3161434156103736915",
+          "name": "barirCode",
+          "type": 5
+        },
+        {
+          "id": "28:1093918572734157713",
+          "name": "walkOrder",
+          "type": 5
+        },
+        {
+          "id": "29:3865721501057893165",
+          "name": "barirNameE",
+          "type": 9
+        },
+        {
+          "id": "30:5787583042953953902",
+          "name": "barirName",
+          "type": 9
+        },
+        {
+          "id": "31:5826777228383817943",
+          "name": "elakarName",
+          "type": 9
+        },
+        {
+          "id": "32:5902095929012329904",
+          "name": "landMark",
+          "type": 9
+        },
+        {
+          "id": "33:2810183006924060778",
+          "name": "dollCode",
+          "type": 9
+        },
+        {
+          "id": "34:6360744629762978909",
+          "name": "groupName",
+          "type": 9
+        },
+        {
+          "id": "35:3332436023108215031",
+          "name": "phoneNo",
+          "type": 9
+        },
+        {
+          "id": "36:5523401622611603234",
+          "name": "cc",
+          "type": 5
+        },
+        {
+          "id": "37:427299709527797822",
+          "name": "chainNo",
+          "type": 5
+        },
+        {
+          "id": "38:5660000748976081027",
+          "name": "post",
+          "type": 9
+        },
+        {
+          "id": "39:3911257273229739306",
+          "name": "ppost",
+          "type": 5
+        },
+        {
+          "id": "40:2958747593346652669",
+          "name": "name",
+          "type": 9
+        },
+        {
+          "id": "41:8815944275262765559",
+          "name": "address",
+          "type": 9
+        },
+        {
+          "id": "42:1589315578757119968",
+          "name": "kaliyaAc",
+          "type": 9
+        },
+        {
+          "id": "43:5979169936674508287",
+          "name": "comment",
+          "type": 9
+        },
+        {
+          "id": "44:6454424914931313787",
+          "name": "userName",
+          "type": 9
+        },
+        {
+          "id": "45:1417171877791499044",
+          "name": "backSodosso",
+          "type": 5
+        },
+        {
+          "id": "46:4559545292732076749",
+          "name": "nextSodosso",
+          "type": 5
+        },
+        {
+          "id": "47:5404353728528047027",
+          "name": "pouseRelation",
+          "type": 9
+        },
+        {
+          "id": "48:2799804546402983592",
+          "name": "pouseName",
+          "type": 9
+        },
+        {
+          "id": "49:6470409433955698744",
+          "name": "pousePesha",
+          "type": 9
+        },
+        {
+          "id": "50:6718361880505351719",
+          "name": "bSodossoName",
+          "type": 9
+        },
+        {
+          "id": "51:6192307953792967443",
+          "name": "branch",
+          "type": 9
+        },
+        {
+          "id": "52:3393301438290410573",
+          "name": "timeStamp",
+          "type": 9
+        },
+        {
+          "id": "53:978335954431545861",
+          "name": "submitBy",
+          "type": 9
+        },
+        {
+          "id": "54:6118372202837627453",
+          "name": "reBlPhoto",
+          "type": 5
+        },
+        {
+          "id": "55:5690242270913085980",
+          "name": "balanchingChk",
+          "type": 5
+        },
+        {
+          "id": "56:6072042800188315501",
+          "name": "superChk",
+          "type": 9
+        },
+        {
+          "id": "57:7380292066543768854",
+          "name": "activation",
+          "type": 9
+        },
+        {
+          "id": "58:8289647229058107016",
+          "name": "sonchoyCollectionDate",
+          "type": 9
+        },
+        {
+          "id": "59:2871270519748192867",
+          "name": "kistiCollectionDate",
+          "type": 9
+        },
+        {
+          "id": "60:9178974960165556408",
+          "name": "balance",
+          "type": 5
+        }
+      ],
+      "relations": []
     }
   ],
-  "lastEntityId": "1:6711357432305510592",
+  "lastEntityId": "2:8235802978493852794",
   "lastIndexId": "0:0",
   "lastRelationId": "0:0",
   "lastSequenceId": "0:0",

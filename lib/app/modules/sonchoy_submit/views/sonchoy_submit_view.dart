@@ -2,13 +2,14 @@ import 'package:aloronsite/app/data/models/CollectionSheetModel.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../../database/objectbox_db/collection_sheet_schema.dart';
 import '../../../widgets/outline_rounded_inputbox.dart';
 import '../controllers/sonchoy_submit_controller.dart';
 
 class SonchoySubmitView extends GetView<SonchoySubmitController> {
   SonchoySubmitView({Key? key}) : super(key: key);
 
-  final CollectionSheetModel collection = Get.arguments['object'];
+  final CollectionSheetEntity collection = Get.arguments['object'];
 
   @override
   Widget build(BuildContext context) {
@@ -127,9 +128,33 @@ class SonchoySubmitView extends GetView<SonchoySubmitController> {
             ElevatedButton(
                 onPressed: () {},
                 style: const ButtonStyle(
+                    backgroundColor: MaterialStatePropertyAll(Colors.orange)),
+                child: Text(
+                  'Bokeya Sonchoy Submit',
+                  style: Theme.of(context)
+                      .textTheme
+                      .labelSmall
+                      ?.copyWith(color: Colors.white),
+                )),
+            const SizedBox(height: 8),
+            ElevatedButton(
+                onPressed: () {},
+                style: const ButtonStyle(
+                    backgroundColor: MaterialStatePropertyAll(Colors.blue)),
+                child: Text(
+                  'Kisti Submit',
+                  style: Theme.of(context)
+                      .textTheme
+                      .labelSmall
+                      ?.copyWith(color: Colors.white),
+                )),
+            const SizedBox(height: 8),
+            ElevatedButton(
+                onPressed: () {},
+                style: const ButtonStyle(
                     backgroundColor: MaterialStatePropertyAll(Colors.red)),
                 child: Text(
-                  'Bokeya Submit',
+                  'Bokeya Kisti Submit',
                   style: Theme.of(context)
                       .textTheme
                       .labelSmall
