@@ -1,5 +1,5 @@
-import 'package:aloronsite/app/data/models/CollectionSheetModel.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 import '../../../../database/objectbox_db/collection_sheet_schema.dart';
@@ -19,6 +19,29 @@ class SonchoySubmitView extends GetView<SonchoySubmitController> {
           padding: const EdgeInsets.all(15),
           physics: const BouncingScrollPhysics(),
           children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                SizedBox(
+                  width: 100.w,
+                  child: ElevatedButton(
+                      onPressed: () {},
+                      style: const ButtonStyle(
+                          backgroundColor:
+                              MaterialStatePropertyAll(Colors.red)),
+                      child: Text(
+                        'Skip',
+                        style: Theme.of(context)
+                            .textTheme
+                            .labelMedium
+                            ?.copyWith(color: Colors.white),
+                      )),
+                )
+              ],
+            ),
+            const SizedBox(
+              height: 8,
+            ),
             OutlineRoundedInputBox(
               label: 'digitalHishabNo'.tr,
               hint: '',

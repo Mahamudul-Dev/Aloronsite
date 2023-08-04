@@ -9,7 +9,6 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:logger/logger.dart';
-import 'package:number_paginator/number_paginator.dart';
 
 import '../../../data/utils.dart';
 
@@ -24,6 +23,7 @@ class CollectionSheetController extends GetxController {
   RxBool isSheetLoaded = false.obs;
   RxBool isSheetComplete = false.obs;
   final dio = Dio();
+  DateTime? selectedDate;
 
   List<DropdownMenuItem<String>> weekdays() {
     return [
@@ -61,7 +61,7 @@ class CollectionSheetController extends GetxController {
 
   Future<void> selectDate(BuildContext context) async {
     DateTime currentDate = DateTime.now();
-    DateTime? selectedDate = await showDatePicker(
+    selectedDate = await showDatePicker(
       context: context,
       initialDate: currentDate,
       firstDate: DateTime(1900),
@@ -83,44 +83,65 @@ class CollectionSheetController extends GetxController {
     }
   }
 
-  Future<List<CollectionSheetEntity>>? getSheet() async {
+  String _getDayName(DateTime date) {
+    final List<String> days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+    return days[date.weekday - 1];
+  }
+
+  Future<List<CollectionSheetEntity>?>? getSheet() async {
     isLoading.value = true;
-    Map<String, dynamic> query = {
-      "soCode": soCodeController.value.text,
-      "collctionDay": selectedDay.value
-    };
-
-    try {
-      final response = await dio.post(BASE_URL + COLLECTION_SHEET,
-          data: jsonEncode(query),
-          options: Options(
-              contentType: 'application/json',
-              responseType: ResponseType.json));
-      Logger().i(response.data);
-      if (response.statusCode == 200) {
-        isLoading.value = false;
-        isSheetLoaded.value = true;
-        CacheDb().saveSheetStatus(isSheetLoaded.value);
-
-        for (Map i in response.data) {
-          Logger().d('Line 104: $i');
-          await dbHelper.saveCollectionSheet(CollectionSheetModel.fromJson(i));
-
-        }
-
-        return Future.value(dbHelper.getCollectionSheet());
-      } else {
-        Logger().e(response.data);
-        Get.snackbar('Opps!', 'An there was a error when loading data sheet');
-        isLoading.value = false;
-      }
+    if (isSheetLoaded.value) {
       return Future.value(dbHelper.getCollectionSheet());
-    } catch (e) {
-      isLoading.value = false;
-      Logger().e(e);
+    } else {
+      if (selectedDate != null && selectedDay.value != '') {
+        if (_getDayName(selectedDate!) != selectedDay.value) {
+          Get.snackbar('Sorry', 'Day not matching with date');
+          isLoading.value = false;
+          return Future.value(null);
+        } else {
+          Map<String, dynamic> query = {
+            "soCode": soCodeController.value.text,
+            "collctionDay": selectedDay.value
+          };
+
+          try {
+            final response = await dio.post(BASE_URL + COLLECTION_SHEET,
+                data: jsonEncode(query),
+                options: Options(
+                    contentType: 'application/json',
+                    responseType: ResponseType.json));
+            Logger().i(response.data);
+            if (response.statusCode == 200) {
+              isLoading.value = false;
+              isSheetLoaded.value = true;
+              CacheDb().saveSheetStatus(isSheetLoaded.value);
+
+              for (Map i in response.data) {
+                Logger().d('Line 104: $i');
+                await dbHelper
+                    .saveCollectionSheet(CollectionSheetModel.fromJson(i));
+              }
+
+              return Future.value(dbHelper.getCollectionSheet());
+            } else {
+              Logger().e(response.data);
+              Get.snackbar(
+                  'Opps!', 'An there was a error when loading data sheet');
+              isLoading.value = false;
+            }
+            return Future.value(dbHelper.getCollectionSheet());
+          } catch (e) {
+            isLoading.value = false;
+            Logger().e(e);
+          }
+          isLoading.value = false;
+          return Future.value(dbHelper.getCollectionSheet());
+        }
+      }
     }
     isLoading.value = false;
-    return Future.value(dbHelper.getCollectionSheet());
+    Get.snackbar('Opps', 'Please Select Date & Day');
+    return Future.value(null);
   }
 
   void skipSheet() {

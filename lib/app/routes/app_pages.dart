@@ -9,6 +9,8 @@ import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/login/bindings/login_binding.dart';
 import '../modules/login/views/login_view.dart';
+import '../modules/recipt_upload/bindings/recipt_upload_binding.dart';
+import '../modules/recipt_upload/views/recipt_upload_view.dart';
 import '../modules/sonchoy_submit/bindings/sonchoy_submit_binding.dart';
 import '../modules/sonchoy_submit/views/sonchoy_submit_view.dart';
 import '../modules/upload_list/bindings/upload_list_binding.dart';
@@ -52,6 +54,11 @@ class AppPages {
       name: _Paths.SONCHOY_SUBMIT,
       page: () => SonchoySubmitView(),
       binding: SonchoySubmitBinding(),
+    ),
+    GetPage(
+      name: _Paths.RECIPT_UPLOAD,
+      page: () => const ReciptUploadView(),
+      binding: ReciptUploadBinding(),
     ),
   ];
 }

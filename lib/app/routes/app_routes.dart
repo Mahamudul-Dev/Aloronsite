@@ -9,6 +9,7 @@ abstract class Routes {
   static const UPLOAD_LIST = _Paths.UPLOAD_LIST;
   static const DASHBOARD = _Paths.DASHBOARD;
   static const SONCHOY_SUBMIT = _Paths.SONCHOY_SUBMIT;
+  static const RECIPT_UPLOAD = _Paths.RECIPT_UPLOAD;
 }
 
 abstract class _Paths {
@@ -19,4 +20,5 @@ abstract class _Paths {
   static const UPLOAD_LIST = '/upload-list';
   static const DASHBOARD = '/dashboard';
   static const SONCHOY_SUBMIT = '/sonchoy-submit';
+  static const RECIPT_UPLOAD = '/recipt-upload';
 }
