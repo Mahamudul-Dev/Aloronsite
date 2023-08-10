@@ -57,7 +57,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.RECIPT_UPLOAD,
-      page: () => const ReciptUploadView(),
+      page: () => ReciptUploadView(),
       binding: ReciptUploadBinding(),
     ),
   ];

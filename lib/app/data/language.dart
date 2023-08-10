@@ -23,7 +23,8 @@ class Languages extends Translations {
           'workerCode': 'Worker Code',
           'mobile': 'Mobile',
           'sureAlertTitle': 'Sure?',
-          'sureAlertContent': 'Are you want to skip this sheet?'
+          'sureAlertContent': 'Are you want to skip this sheet?',
+          'uploadReceiptTitle':'Upload Receipt'
         },
         'bn_BD': {
           'dashboardTitle': 'ড্যাশবোর্ড',
@@ -46,7 +47,8 @@ class Languages extends Translations {
           'workerCode': 'কর্মি কোড',
           'mobile': 'মোবাইল',
           'sureAlertTitle': 'আপনি কি শিওর?',
-          'sureAlertContent': 'আপনি এই শীট টি স্কিপ করতে চান?'
+          'sureAlertContent': 'আপনি এই শীট টি স্কিপ করতে চান?',
+          'uploadReceiptTitle':''
         }
       };
 }

@@ -11,7 +11,7 @@ class HomeController extends GetxController {
   RxInt activeIndex = 0.obs;
   List<Widget> screens = [const DashboardView(), const UploadListView()];
 
-  User getCurrentUser() {
+  UserSchema getCurrentUser() {
     return ObjectboxHelper().currentUserBox.getAll().first;
   }
 }

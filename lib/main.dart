@@ -15,7 +15,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await GetStorage.init();
   await ObjectBoxSingleton().initObjectBox();
-  Logger().i(ObjectboxHelper().getCollectionSheet());
+  Logger().i(ObjectboxHelper().getCollectionSheet().asMap());
   runApp(const Aloronsite());
 }
 

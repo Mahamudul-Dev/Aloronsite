@@ -14,6 +14,7 @@ class OutlineRoundedInputBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: controller,
       decoration: InputDecoration(
           label: Text(
             label,

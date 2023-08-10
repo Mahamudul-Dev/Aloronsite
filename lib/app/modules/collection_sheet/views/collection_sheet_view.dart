@@ -1,4 +1,5 @@
 import 'package:aloronsite/app/modules/collection_sheet/views/search_dialog_view.dart';
+import 'package:aloronsite/app/modules/collection_sheet/views/searchbar_view.dart';
 import 'package:aloronsite/app/routes/app_pages.dart';
 import 'package:aloronsite/app/widgets/collection_item_view.dart';
 import 'package:aloronsite/database/cache_db/cache_db.dart';
@@ -18,6 +19,17 @@ class CollectionSheetView extends GetView<CollectionSheetController> {
       appBar: AppBar(
         title: Text('collectionSheetTitle'.tr),
         centerTitle: true,
+        actions: [
+          Obx((){
+            if(controller.isSheetLoaded.value || CacheDb().getSheetStatus()){
+              return IconButton(onPressed: (){
+                showSearch(context: context, delegate: SearchbarView());
+              }, icon:  const Icon(Icons.search_rounded));
+            } else {
+              return ListView();
+            }
+          })
+        ],
       ),
       body: Obx(() {
         return controller.isSheetLoaded.value || CacheDb().getSheetStatus()
@@ -32,68 +44,77 @@ class CollectionSheetView extends GetView<CollectionSheetController> {
                         if (index == 0) {
                           return Padding(
                             padding: const EdgeInsets.symmetric(horizontal: 15),
-                            child: ElevatedButton(
-                                onPressed: () {
-                                  showDialog(
-                                      context: context,
-                                      builder: (context) {
-                                        return AlertDialog(
-                                          title: Text(
-                                            'sureAlertTitle'.tr,
-                                            style: Theme.of(context)
-                                                .textTheme
-                                                .titleMedium,
-                                          ),
-                                          content: Text(
-                                            'sureAlertContent'.tr,
-                                            style: Theme.of(context)
-                                                .textTheme
-                                                .bodyMedium,
-                                          ),
-                                          actions: [
-                                            ElevatedButton(
-                                                onPressed: () => Get.back(),
-                                                style: const ButtonStyle(
-                                                    backgroundColor:
-                                                        MaterialStatePropertyAll(
-                                                            Colors.green)),
-                                                child: Text(
-                                                  'No',
+                            child: Flex(
+                              direction: Axis.horizontal,
+                              children: [
+                                Expanded(
+                                  child: ElevatedButton(
+                                      onPressed: () {
+                                        showDialog(
+                                            context: context,
+                                            builder: (context) {
+                                              return AlertDialog(
+                                                title: Text(
+                                                  'sureAlertTitle'.tr,
                                                   style: Theme.of(context)
                                                       .textTheme
-                                                      .labelSmall
-                                                      ?.copyWith(
-                                                          color: Colors.white),
-                                                )),
-                                            ElevatedButton(
-                                                onPressed: () =>
-                                                    controller.skipSheet(),
-                                                style: const ButtonStyle(
-                                                    backgroundColor:
-                                                        MaterialStatePropertyAll(
-                                                            Colors.red)),
-                                                child: Text(
-                                                  'Yes',
+                                                      .titleMedium,
+                                                ),
+                                                content: Text(
+                                                  'sureAlertContent'.tr,
                                                   style: Theme.of(context)
                                                       .textTheme
-                                                      .labelSmall
-                                                      ?.copyWith(
-                                                          color: Colors.white),
-                                                ))
-                                          ],
-                                        );
-                                      });
-                                },
-                                style: const ButtonStyle(
-                                    backgroundColor:
-                                        MaterialStatePropertyAll(Colors.red)),
-                                child: Text(
-                                  'Skip Submit',
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .labelSmall
-                                      ?.copyWith(color: Colors.white),
-                                )),
+                                                      .bodyMedium,
+                                                ),
+                                                actions: [
+                                                  ElevatedButton(
+                                                      onPressed: () => Get.back(),
+                                                      style: const ButtonStyle(
+                                                          backgroundColor:
+                                                              MaterialStatePropertyAll(
+                                                                  Colors.green)),
+                                                      child: Text(
+                                                        'No',
+                                                        style: Theme.of(context)
+                                                            .textTheme
+                                                            .labelSmall
+                                                            ?.copyWith(
+                                                                color: Colors.white),
+                                                      )),
+                                                  ElevatedButton(
+                                                      onPressed: () =>
+                                                          controller.skipSheet(),
+                                                      style: const ButtonStyle(
+                                                          backgroundColor:
+                                                              MaterialStatePropertyAll(
+                                                                  Colors.red)),
+                                                      child: Text(
+                                                        'Yes',
+                                                        style: Theme.of(context)
+                                                            .textTheme
+                                                            .labelSmall
+                                                            ?.copyWith(
+                                                                color: Colors.white),
+                                                      ))
+                                                ],
+                                              );
+                                            });
+                                      },
+                                      style: const ButtonStyle(
+                                          backgroundColor:
+                                              MaterialStatePropertyAll(Colors.red)),
+                                      child: Text(
+                                        'Skip Submit',
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .labelSmall
+                                            ?.copyWith(color: Colors.white),
+                                      )),
+                                ),
+                                const SizedBox(width: 8),
+                                Text('Result: ${snapshot.data?.length}')
+                              ],
+                            ),
                           );
                         }
                         return CollectionItemView(
@@ -112,7 +133,7 @@ class CollectionSheetView extends GetView<CollectionSheetController> {
                               '',
                           sonchoy: snapshot.data?[index - 1].sonchoy ?? '',
                           kisti: snapshot.data?[index - 1].kisti ?? '',
-                          onPressed: () => Get.toNamed(Routes.SONCHOY_SUBMIT,
+                          onPressed: () => Get.toNamed(Routes.RECIPT_UPLOAD,
                               arguments: {'object': snapshot.data?[index - 1]}),
                         );
                       },
@@ -136,7 +157,6 @@ class CollectionSheetView extends GetView<CollectionSheetController> {
                 })
             : const SearchDialogView();
       }),
-      bottomNavigationBar: NumberPaginator(numberPages: 10),
     );
   }
 }

@@ -1,7 +1,7 @@
 import 'package:objectbox/objectbox.dart';
 
 @Entity()
-class User {
+class UserSchema {
   @Id()
   int id;
 
@@ -35,7 +35,7 @@ class User {
   String chk_2;
   String password;
 
-  User({
+  UserSchema({
     this.id = 0,
     required this.user_id,
     required this.user,
@@ -67,4 +67,75 @@ class User {
     required this.chk_2,
     required this.password,
   });
+
+  factory UserSchema.fromJson(Map<String, dynamic> json) {
+    return UserSchema(
+      id: json['id'] ?? 0,
+      user_id: json['user_id'] ?? '',
+      user: json['user'] ?? '',
+      active: json['active'] ?? 0,
+      user_porikkito_chk: json['user_porikkito_chk'] ?? '',
+      develop_mg: json['develop_mg'] ?? '',
+      operation_mg: json['operation_mg'] ?? '',
+      area_manage: json['area_manage'] ?? '',
+      md: json['md'] ?? '',
+      member: json['member'] ?? '',
+      name: json['name'] ?? '',
+      last_name: json['last_name'] ?? '',
+      user_photo: json['user_photo'] ?? '',
+      email: json['email'] ?? '',
+      mobile: json['mobile'] ?? '',
+      address: json['address'] ?? '',
+      kromic2: json['kromic2'] ?? 0,
+      plus_amount: json['plus_amount'] ?? 0,
+      minus_amount: json['minus_amount'] ?? 0,
+      organization: json['organization'] ?? '',
+      designation: json['designation'] ?? '',
+      br_code: json['br_code'] ?? '',
+      dol_code: json['dol_code'] ?? '',
+      pack: json['pack'] ?? '',
+      date: json['date'],
+      time: json['time'] ?? '',
+      zxc: json['zxc'] ?? '',
+      branch: json['branch'] ?? '',
+      chk_2: json['chk_2'] ?? '',
+      password: json['password'] ?? '',
+    );
+  }
+
+  // Method to convert entity to JSON
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'user_id': user_id,
+      'user': user,
+      'active': active,
+      'user_porikkito_chk': user_porikkito_chk,
+      'develop_mg': develop_mg,
+      'operation_mg': operation_mg,
+      'area_manage': area_manage,
+      'md': md,
+      'member': member,
+      'name': name,
+      'last_name': last_name,
+      'user_photo': user_photo,
+      'email': email,
+      'mobile': mobile,
+      'address': address,
+      'kromic2': kromic2,
+      'plus_amount': plus_amount,
+      'minus_amount': minus_amount,
+      'organization': organization,
+      'designation': designation,
+      'br_code': br_code,
+      'dol_code': dol_code,
+      'pack': pack,
+      'date': date,
+      'time': time,
+      'zxc': zxc,
+      'branch': branch,
+      'chk_2': chk_2,
+      'password': password,
+    };
+  }
 }

@@ -88,16 +88,16 @@ class CollectionSheetController extends GetxController {
     return days[date.weekday - 1];
   }
 
-  Future<List<CollectionSheetEntity>?>? getSheet() async {
+  Future<List<CollectionSheetEntity>?> getSheet() async {
     isLoading.value = true;
-    if (isSheetLoaded.value) {
+    if (isSheetLoaded.value || CacheDb().getSheetStatus()) {
       return Future.value(dbHelper.getCollectionSheet());
     } else {
-      if (selectedDate != null && selectedDay.value != '') {
+      if (selectedDate != null) {
         if (_getDayName(selectedDate!) != selectedDay.value) {
           Get.snackbar('Sorry', 'Day not matching with date');
           isLoading.value = false;
-          return Future.value(null);
+          return Future.value();
         } else {
           Map<String, dynamic> query = {
             "soCode": soCodeController.value.text,

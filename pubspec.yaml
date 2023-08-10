@@ -21,6 +21,13 @@ dependencies:
   animated_bottom_navigation_bar: 1.2.0
   dio: 5.3.1
   number_paginator: 0.3.2
+  image_picker: 1.0.2
+  permission_handler: 10.4.3
+  connectivity_plus: 4.0.2
+  intl: 0.18.1
+  step_progress_indicator: 1.0.2
+  geolocator: 9.0.2
+  geocoding: 2.1.0
   flutter: 
     sdk: flutter
 
@@ -32,5 +39,7 @@ dev_dependencies:
     sdk: flutter
 
 flutter: 
+  assets: 
+    - assets/
   uses-material-design: true
 

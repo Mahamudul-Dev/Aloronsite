@@ -1,48 +1,29 @@
 import 'package:aloronsite/app/data/models/CollectionSheetModel.dart';
-import 'package:aloronsite/app/data/models/LoginResModel.dart' as model;
+import 'package:aloronsite/database/objectbox_db/kisti_schema.dart';
+import 'package:aloronsite/database/objectbox_db/sonchoy_schema.dart';
+import 'package:aloronsite/database/objectbox_db/upload_photo_schema.dart';
 import 'package:logger/logger.dart';
 
+import '../../app/data/models/LoginResModel.dart';
 import './objectbox_singleton.dart';
+import 'bokeya_sonchoy_schema.dart';
 import 'user_schema.dart';
 import 'collection_sheet_schema.dart';
 
 class ObjectboxHelper {
-  final currentUserBox = ObjectBoxSingleton().store.box<User>();
+  final currentUserBox = ObjectBoxSingleton().store.box<UserSchema>();
+  final uploadPhotoBox = ObjectBoxSingleton().store.box<UploadPhotoSchema>();
   final collectionSheetBox =
       ObjectBoxSingleton().store.box<CollectionSheetEntity>();
+  final sonchoySubmitBox = ObjectBoxSingleton().store.box<SonchoySchema>();
+  final bokeyaSonchoyBox = ObjectBoxSingleton().store.box<BokeyaSonchoySchema>();
+  final kistiSubmitBox = ObjectBoxSingleton().store.box<KistiSchema>();
+  final bokeyaKistiBox = ObjectBoxSingleton().store.box<BokeyaSonchoySchema>();
 
-  void saveUser(model.LoginResModel user) async {
-    final userObject = User(
-        user_id: user.user.first.userId,
-        user: user.user.first.user,
-        active: user.user.first.active,
-        user_porikkito_chk: user.user.first.userPorikkitoChk,
-        develop_mg: user.user.first.developMg,
-        operation_mg: user.user.first.operationMg,
-        area_manage: user.user.first.areaManage,
-        md: user.user.first.md,
-        member: user.user.first.member,
-        name: user.user.first.name,
-        last_name: user.user.first.lastName,
-        user_photo: user.user.first.userPhoto,
-        email: user.user.first.email,
-        mobile: user.user.first.mobile,
-        address: user.user.first.address,
-        kromic2: user.user.first.kromic2,
-        plus_amount: user.user.first.plusAmount,
-        minus_amount: user.user.first.minusAmount,
-        organization: user.user.first.organization,
-        designation: user.user.first.designation,
-        br_code: user.user.first.brCode,
-        dol_code: user.user.first.dolCode,
-        pack: user.user.first.pack,
-        time: user.user.first.time,
-        zxc: user.user.first.zxc,
-        branch: user.user.first.branch,
-        chk_2: user.user.first.chk_2,
-        password: user.user.first.password);
+  void saveUser(LoginResModel user) async {
     currentUserBox.removeAll();
-    await currentUserBox.putAsync(userObject);
+    final schema = UserSchema.fromJson(user.user.first.toJson());
+    await currentUserBox.putAsync(schema);
   }
 
   Future<void> saveCollectionSheet(CollectionSheetModel sheet) {
@@ -111,7 +92,7 @@ class ObjectboxHelper {
           kistiCollectionDate: sheet.kistiCollectionDate ?? '',
           balance: sheet.balance ?? 00);
 
-      if(collectionSheetBox.getAll().contains(collection)){
+      if(collectionSheetBox.getAll().any((element) => element.sodossoName == collection.sodossoName && element.serial == collection.serial && element.name == collection.name)){
         return Future.value();
       }
       Logger().i(collection);
@@ -121,5 +102,13 @@ class ObjectboxHelper {
 
   List<CollectionSheetEntity> getCollectionSheet(){
     return collectionSheetBox.getAll();
+  }
+
+  Future<void> savePhotoReceiptLocal(UploadPhotoSchema photoSchema)async{
+    await uploadPhotoBox.putAsync(photoSchema);
+  }
+
+  Future<void> saveSonchoy(SonchoySchema schema)async{
+    await sonchoySubmitBox.putAsync(schema);
   }
 }
