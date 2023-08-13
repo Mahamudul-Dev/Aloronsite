@@ -1,7 +1,7 @@
 import 'package:objectbox/objectbox.dart';
 
 @Entity()
-class BokeyaSonchoySchema {
+class BokeyaKistiSchema {
   @Id(assignable: true)
   int? id;
 
@@ -76,7 +76,7 @@ class BokeyaSonchoySchema {
   String? pCode;
   String? collectionBar;
 
-  BokeyaSonchoySchema(
+  BokeyaKistiSchema(
       {this.id = 0,
         this.receiptNum,
         this.sl2,
@@ -149,7 +149,7 @@ class BokeyaSonchoySchema {
         this.pCode,
         this.collectionBar});
 
-  BokeyaSonchoySchema.fromJson(Map<String, dynamic> json) {
+  BokeyaKistiSchema.fromJson(Map<String, dynamic> json) {
     receiptNum = json['receipt_num'] ?? '';
     sl2 = json['sl_2'] ?? '';
     date = json['date'] ?? '';

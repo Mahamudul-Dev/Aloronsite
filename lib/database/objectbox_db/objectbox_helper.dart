@@ -1,4 +1,6 @@
 import 'package:aloronsite/app/data/models/CollectionSheetModel.dart';
+import 'package:aloronsite/app/modules/collection_sheet/controllers/collection_sheet_controller.dart';
+import 'package:aloronsite/database/objectbox_db/bokeya_kisti_schema.dart';
 import 'package:aloronsite/database/objectbox_db/kisti_schema.dart';
 import 'package:aloronsite/database/objectbox_db/sonchoy_schema.dart';
 import 'package:aloronsite/database/objectbox_db/upload_photo_schema.dart';
@@ -18,7 +20,7 @@ class ObjectboxHelper {
   final sonchoySubmitBox = ObjectBoxSingleton().store.box<SonchoySchema>();
   final bokeyaSonchoyBox = ObjectBoxSingleton().store.box<BokeyaSonchoySchema>();
   final kistiSubmitBox = ObjectBoxSingleton().store.box<KistiSchema>();
-  final bokeyaKistiBox = ObjectBoxSingleton().store.box<BokeyaSonchoySchema>();
+  final bokeyaKistiBox = ObjectBoxSingleton().store.box<BokeyaKistiSchema>();
 
   void saveUser(LoginResModel user) async {
     currentUserBox.removeAll();
@@ -110,10 +112,41 @@ class ObjectboxHelper {
 
   Future<void> saveSonchoy(SonchoySchema schema, int id)async{
     await sonchoySubmitBox.putAsync(schema);
+    await CollectionSheetController().getSheet();
     collectionSheetBox.remove(id);
   }
 
   List<SonchoySchema> getSonchoySchema(){
     return sonchoySubmitBox.getAll();
+  }
+
+  Future<void> saveBokeyaSonchoy(BokeyaSonchoySchema schema, int id)async{
+    await bokeyaSonchoyBox.putAsync(schema);
+    await CollectionSheetController().getSheet();
+    collectionSheetBox.remove(id);
+  }
+
+  List<BokeyaSonchoySchema> getBokeyaSonchoySchema(){
+    return bokeyaSonchoyBox.getAll();
+  }
+
+  Future<void> saveKisti(KistiSchema schema, int id)async{
+    await kistiSubmitBox.putAsync(schema);
+    await CollectionSheetController().getSheet();
+    collectionSheetBox.remove(id);
+  }
+
+  List<KistiSchema> getKistiSchema(){
+    return kistiSubmitBox.getAll();
+  }
+
+  Future<void> saveBokeyaKisti(BokeyaKistiSchema schema, int id)async{
+    await bokeyaKistiBox.putAsync(schema);
+    await CollectionSheetController().getSheet();
+    collectionSheetBox.remove(id);
+  }
+
+  List<BokeyaKistiSchema> getBokeyaKistiSchema(){
+    return bokeyaKistiBox.getAll();
   }
 }

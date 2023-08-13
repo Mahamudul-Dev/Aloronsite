@@ -14,6 +14,7 @@ import 'package:objectbox/internal.dart'; // generated code can access "internal
 import 'package:objectbox/objectbox.dart';
 import 'package:objectbox_flutter_libs/objectbox_flutter_libs.dart';
 
+import 'database/objectbox_db/bokeya_kisti_schema.dart';
 import 'database/objectbox_db/bokeya_sonchoy_schema.dart';
 import 'database/objectbox_db/collection_sheet_schema.dart';
 import 'database/objectbox_db/kisti_schema.dart';
@@ -1632,6 +1633,370 @@ final _entities = <ModelEntity>[
             flags: 0)
       ],
       relations: <ModelRelation>[],
+      backlinks: <ModelBacklink>[]),
+  ModelEntity(
+      id: const IdUid(8, 5144991897576269773),
+      name: 'BokeyaKistiSchema',
+      lastPropertyId: const IdUid(71, 4445501417227345768),
+      flags: 0,
+      properties: <ModelProperty>[
+        ModelProperty(
+            id: const IdUid(1, 6659394433683137811),
+            name: 'id',
+            type: 6,
+            flags: 129),
+        ModelProperty(
+            id: const IdUid(2, 131757313283681733),
+            name: 'receiptNum',
+            type: 9,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(3, 167916264523365953),
+            name: 'sl2',
+            type: 9,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(4, 2069449280631512410),
+            name: 'date',
+            type: 9,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(5, 5248923075866290014),
+            name: 'sIdCS',
+            type: 9,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(6, 6618391567555963906),
+            name: 'sName',
+            type: 9,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(7, 2172812975485743875),
+            name: 'sAcSectorId',
+            type: 9,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(8, 7764530866604905480),
+            name: 'sAcSectorName',
+            type: 9,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(9, 8346483754622738035),
+            name: 'sAcDesId',
+            type: 9,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(10, 2245186159935199889),
+            name: 'sAcDesName',
+            type: 9,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(11, 7254623605054087267),
+            name: 'sSelectDrCr',
+            type: 9,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(12, 5724073410127450481),
+            name: 'sDrBalance',
+            type: 9,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(13, 7295965146819835392),
+            name: 'sCrBalance',
+            type: 9,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(14, 8815452650353222798),
+            name: 'sBalance',
+            type: 9,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(15, 5216929664951715231),
+            name: 'sTotalBalance',
+            type: 9,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(16, 1528723575780529436),
+            name: 'sComments',
+            type: 9,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(17, 2568075918972059641),
+            name: 'accountNo',
+            type: 9,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(18, 4067083717475917720),
+            name: 'name',
+            type: 9,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(19, 9122646014264480000),
+            name: 'acSectorId',
+            type: 9,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(20, 1639260745677758941),
+            name: 'acSectorName',
+            type: 9,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(21, 35390326578864113),
+            name: 'acDesId',
+            type: 9,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(22, 8923616519598155243),
+            name: 'acDesName',
+            type: 9,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(23, 7258641511770543470),
+            name: 'selectDrCr',
+            type: 9,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(24, 3910325747344473868),
+            name: 'drAmount',
+            type: 9,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(25, 3746960375132475832),
+            name: 'crAmount',
+            type: 9,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(26, 6995473190519325682),
+            name: 'balance',
+            type: 9,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(27, 5466535530470357887),
+            name: 'totalBalance',
+            type: 9,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(28, 4735702319339617350),
+            name: 'comments',
+            type: 9,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(29, 3129674582606972370),
+            name: 'ppSName',
+            type: 9,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(30, 5989102712250268383),
+            name: 'serial',
+            type: 9,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(31, 7718463622092899498),
+            name: 'kisti',
+            type: 9,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(32, 4459864542745011021),
+            name: 'checkValue',
+            type: 9,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(33, 396066119448877079),
+            name: 'cc',
+            type: 9,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(34, 4498832257444718106),
+            name: 'soCode',
+            type: 9,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(35, 1894327495071526878),
+            name: 'password',
+            type: 9,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(36, 6175368370309854277),
+            name: 'phoneNo',
+            type: 9,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(37, 3456195183841823417),
+            name: 'barirCode',
+            type: 9,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(38, 6117256368211222657),
+            name: 'withdraw',
+            type: 9,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(39, 7244093862925700001),
+            name: 'nameSabekCash',
+            type: 9,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(40, 8375567046069282208),
+            name: 'invoice',
+            type: 9,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(41, 874719596268324987),
+            name: 'kaliyaAc',
+            type: 9,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(42, 2716636613083220871),
+            name: 'opCode',
+            type: 9,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(43, 90996216132545470),
+            name: 'kistiSale',
+            type: 9,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(44, 1544778968273763505),
+            name: 'a',
+            type: 9,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(45, 6883822660886081669),
+            name: 'b',
+            type: 9,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(46, 9076611671859693569),
+            name: 'comment',
+            type: 9,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(47, 3633623070866057803),
+            name: 'adayTaka',
+            type: 9,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(48, 1613121748253617803),
+            name: 'currentSonchoy',
+            type: 9,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(49, 7740641515139552905),
+            name: 'jomakarirName',
+            type: 9,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(50, 4599817348572061963),
+            name: 'cashJoma',
+            type: 9,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(51, 4187346122160009865),
+            name: 'qTotal',
+            type: 9,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(52, 4063831606091627331),
+            name: 'cashierName',
+            type: 9,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(53, 6724764029018742040),
+            name: 'adayBiboron',
+            type: 9,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(54, 1242674272844825928),
+            name: 'cashKhaSName',
+            type: 9,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(55, 5190638440507446102),
+            name: 'cashKhaSNumb',
+            type: 9,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(56, 3214068217712621073),
+            name: 'submitBy',
+            type: 9,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(57, 1241090463479522939),
+            name: 'jomakarirId',
+            type: 9,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(58, 2085710982555716179),
+            name: 'date2',
+            type: 9,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(59, 3989271333498765254),
+            name: 'value2',
+            type: 9,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(60, 6954625751333302168),
+            name: 'cSoCode',
+            type: 9,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(61, 9218818839460360990),
+            name: 'pokkyJomakarirName',
+            type: 9,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(62, 1328136417757590707),
+            name: 'chk5',
+            type: 9,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(63, 452219594948354318),
+            name: 'checkValue2',
+            type: 9,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(64, 1903808688584032218),
+            name: 'kistiReposting',
+            type: 9,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(65, 1330872375886817435),
+            name: 'oldSl2',
+            type: 9,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(66, 4474131998428818062),
+            name: 'srDhoron',
+            type: 9,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(67, 1650283879323266983),
+            name: 'meyad',
+            type: 9,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(68, 5879336865692893936),
+            name: 'sonchoyDueTaka',
+            type: 9,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(69, 3819435097369313431),
+            name: 'kistiDueTaka',
+            type: 9,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(70, 8404445472354183049),
+            name: 'pCode',
+            type: 9,
+            flags: 0),
+        ModelProperty(
+            id: const IdUid(71, 4445501417227345768),
+            name: 'collectionBar',
+            type: 9,
+            flags: 0)
+      ],
+      relations: <ModelRelation>[],
       backlinks: <ModelBacklink>[])
 ];
 
@@ -1655,7 +2020,7 @@ Future<Store> openStore(
 ModelDefinition getObjectBoxModel() {
   final model = ModelInfo(
       entities: _entities,
-      lastEntityId: const IdUid(7, 6443198923250394604),
+      lastEntityId: const IdUid(8, 5144991897576269773),
       lastIndexId: const IdUid(0, 0),
       lastRelationId: const IdUid(0, 0),
       lastSequenceId: const IdUid(0, 0),
@@ -2838,6 +3203,359 @@ ModelDefinition getObjectBoxModel() {
           final rootOffset = buffer.derefObject(0);
 
           final object = BokeyaSonchoySchema(
+              id: const fb.Int64Reader()
+                  .vTableGetNullable(buffer, rootOffset, 4),
+              receiptNum: const fb.StringReader(asciiOptimization: true)
+                  .vTableGetNullable(buffer, rootOffset, 6),
+              sl2: const fb.StringReader(asciiOptimization: true)
+                  .vTableGetNullable(buffer, rootOffset, 8),
+              date: const fb.StringReader(asciiOptimization: true)
+                  .vTableGetNullable(buffer, rootOffset, 10),
+              sIdCS: const fb.StringReader(asciiOptimization: true)
+                  .vTableGetNullable(buffer, rootOffset, 12),
+              sName: const fb.StringReader(asciiOptimization: true)
+                  .vTableGetNullable(buffer, rootOffset, 14),
+              sAcSectorId: const fb.StringReader(asciiOptimization: true)
+                  .vTableGetNullable(buffer, rootOffset, 16),
+              sAcSectorName:
+                  const fb.StringReader(asciiOptimization: true).vTableGetNullable(buffer, rootOffset, 18),
+              sAcDesId: const fb.StringReader(asciiOptimization: true).vTableGetNullable(buffer, rootOffset, 20),
+              sAcDesName: const fb.StringReader(asciiOptimization: true).vTableGetNullable(buffer, rootOffset, 22),
+              sSelectDrCr: const fb.StringReader(asciiOptimization: true).vTableGetNullable(buffer, rootOffset, 24),
+              sDrBalance: const fb.StringReader(asciiOptimization: true).vTableGetNullable(buffer, rootOffset, 26),
+              sCrBalance: const fb.StringReader(asciiOptimization: true).vTableGetNullable(buffer, rootOffset, 28),
+              sBalance: const fb.StringReader(asciiOptimization: true).vTableGetNullable(buffer, rootOffset, 30),
+              sTotalBalance: const fb.StringReader(asciiOptimization: true).vTableGetNullable(buffer, rootOffset, 32),
+              sComments: const fb.StringReader(asciiOptimization: true).vTableGetNullable(buffer, rootOffset, 34),
+              accountNo: const fb.StringReader(asciiOptimization: true).vTableGetNullable(buffer, rootOffset, 36),
+              name: const fb.StringReader(asciiOptimization: true).vTableGetNullable(buffer, rootOffset, 38),
+              acSectorId: const fb.StringReader(asciiOptimization: true).vTableGetNullable(buffer, rootOffset, 40),
+              acSectorName: const fb.StringReader(asciiOptimization: true).vTableGetNullable(buffer, rootOffset, 42),
+              acDesId: const fb.StringReader(asciiOptimization: true).vTableGetNullable(buffer, rootOffset, 44),
+              acDesName: const fb.StringReader(asciiOptimization: true).vTableGetNullable(buffer, rootOffset, 46),
+              selectDrCr: const fb.StringReader(asciiOptimization: true).vTableGetNullable(buffer, rootOffset, 48),
+              drAmount: const fb.StringReader(asciiOptimization: true).vTableGetNullable(buffer, rootOffset, 50),
+              crAmount: const fb.StringReader(asciiOptimization: true).vTableGetNullable(buffer, rootOffset, 52),
+              balance: const fb.StringReader(asciiOptimization: true).vTableGetNullable(buffer, rootOffset, 54),
+              totalBalance: const fb.StringReader(asciiOptimization: true).vTableGetNullable(buffer, rootOffset, 56),
+              comments: const fb.StringReader(asciiOptimization: true).vTableGetNullable(buffer, rootOffset, 58),
+              ppSName: const fb.StringReader(asciiOptimization: true).vTableGetNullable(buffer, rootOffset, 60),
+              serial: const fb.StringReader(asciiOptimization: true).vTableGetNullable(buffer, rootOffset, 62),
+              kisti: const fb.StringReader(asciiOptimization: true).vTableGetNullable(buffer, rootOffset, 64),
+              checkValue: const fb.StringReader(asciiOptimization: true).vTableGetNullable(buffer, rootOffset, 66),
+              cc: const fb.StringReader(asciiOptimization: true).vTableGetNullable(buffer, rootOffset, 68),
+              soCode: const fb.StringReader(asciiOptimization: true).vTableGetNullable(buffer, rootOffset, 70),
+              password: const fb.StringReader(asciiOptimization: true).vTableGetNullable(buffer, rootOffset, 72),
+              phoneNo: const fb.StringReader(asciiOptimization: true).vTableGetNullable(buffer, rootOffset, 74),
+              barirCode: const fb.StringReader(asciiOptimization: true).vTableGetNullable(buffer, rootOffset, 76),
+              withdraw: const fb.StringReader(asciiOptimization: true).vTableGetNullable(buffer, rootOffset, 78),
+              nameSabekCash: const fb.StringReader(asciiOptimization: true).vTableGetNullable(buffer, rootOffset, 80),
+              invoice: const fb.StringReader(asciiOptimization: true).vTableGetNullable(buffer, rootOffset, 82),
+              kaliyaAc: const fb.StringReader(asciiOptimization: true).vTableGetNullable(buffer, rootOffset, 84),
+              opCode: const fb.StringReader(asciiOptimization: true).vTableGetNullable(buffer, rootOffset, 86),
+              kistiSale: const fb.StringReader(asciiOptimization: true).vTableGetNullable(buffer, rootOffset, 88),
+              a: const fb.StringReader(asciiOptimization: true).vTableGetNullable(buffer, rootOffset, 90),
+              b: const fb.StringReader(asciiOptimization: true).vTableGetNullable(buffer, rootOffset, 92),
+              comment: const fb.StringReader(asciiOptimization: true).vTableGetNullable(buffer, rootOffset, 94),
+              adayTaka: const fb.StringReader(asciiOptimization: true).vTableGetNullable(buffer, rootOffset, 96),
+              currentSonchoy: const fb.StringReader(asciiOptimization: true).vTableGetNullable(buffer, rootOffset, 98),
+              jomakarirName: const fb.StringReader(asciiOptimization: true).vTableGetNullable(buffer, rootOffset, 100),
+              cashJoma: const fb.StringReader(asciiOptimization: true).vTableGetNullable(buffer, rootOffset, 102),
+              qTotal: const fb.StringReader(asciiOptimization: true).vTableGetNullable(buffer, rootOffset, 104),
+              cashierName: const fb.StringReader(asciiOptimization: true).vTableGetNullable(buffer, rootOffset, 106),
+              adayBiboron: const fb.StringReader(asciiOptimization: true).vTableGetNullable(buffer, rootOffset, 108),
+              cashKhaSName: const fb.StringReader(asciiOptimization: true).vTableGetNullable(buffer, rootOffset, 110),
+              cashKhaSNumb: const fb.StringReader(asciiOptimization: true).vTableGetNullable(buffer, rootOffset, 112),
+              submitBy: const fb.StringReader(asciiOptimization: true).vTableGetNullable(buffer, rootOffset, 114),
+              jomakarirId: const fb.StringReader(asciiOptimization: true).vTableGetNullable(buffer, rootOffset, 116),
+              date2: const fb.StringReader(asciiOptimization: true).vTableGetNullable(buffer, rootOffset, 118),
+              value2: const fb.StringReader(asciiOptimization: true).vTableGetNullable(buffer, rootOffset, 120),
+              cSoCode: const fb.StringReader(asciiOptimization: true).vTableGetNullable(buffer, rootOffset, 122),
+              pokkyJomakarirName: const fb.StringReader(asciiOptimization: true).vTableGetNullable(buffer, rootOffset, 124),
+              chk5: const fb.StringReader(asciiOptimization: true).vTableGetNullable(buffer, rootOffset, 126),
+              checkValue2: const fb.StringReader(asciiOptimization: true).vTableGetNullable(buffer, rootOffset, 128),
+              kistiReposting: const fb.StringReader(asciiOptimization: true).vTableGetNullable(buffer, rootOffset, 130),
+              oldSl2: const fb.StringReader(asciiOptimization: true).vTableGetNullable(buffer, rootOffset, 132),
+              srDhoron: const fb.StringReader(asciiOptimization: true).vTableGetNullable(buffer, rootOffset, 134),
+              meyad: const fb.StringReader(asciiOptimization: true).vTableGetNullable(buffer, rootOffset, 136),
+              sonchoyDueTaka: const fb.StringReader(asciiOptimization: true).vTableGetNullable(buffer, rootOffset, 138),
+              kistiDueTaka: const fb.StringReader(asciiOptimization: true).vTableGetNullable(buffer, rootOffset, 140),
+              pCode: const fb.StringReader(asciiOptimization: true).vTableGetNullable(buffer, rootOffset, 142),
+              collectionBar: const fb.StringReader(asciiOptimization: true).vTableGetNullable(buffer, rootOffset, 144));
+
+          return object;
+        }),
+    BokeyaKistiSchema: EntityDefinition<BokeyaKistiSchema>(
+        model: _entities[6],
+        toOneRelations: (BokeyaKistiSchema object) => [],
+        toManyRelations: (BokeyaKistiSchema object) => {},
+        getId: (BokeyaKistiSchema object) => object.id,
+        setId: (BokeyaKistiSchema object, int id) {
+          object.id = id;
+        },
+        objectToFB: (BokeyaKistiSchema object, fb.Builder fbb) {
+          final receiptNumOffset = object.receiptNum == null
+              ? null
+              : fbb.writeString(object.receiptNum!);
+          final sl2Offset =
+              object.sl2 == null ? null : fbb.writeString(object.sl2!);
+          final dateOffset =
+              object.date == null ? null : fbb.writeString(object.date!);
+          final sIdCSOffset =
+              object.sIdCS == null ? null : fbb.writeString(object.sIdCS!);
+          final sNameOffset =
+              object.sName == null ? null : fbb.writeString(object.sName!);
+          final sAcSectorIdOffset = object.sAcSectorId == null
+              ? null
+              : fbb.writeString(object.sAcSectorId!);
+          final sAcSectorNameOffset = object.sAcSectorName == null
+              ? null
+              : fbb.writeString(object.sAcSectorName!);
+          final sAcDesIdOffset = object.sAcDesId == null
+              ? null
+              : fbb.writeString(object.sAcDesId!);
+          final sAcDesNameOffset = object.sAcDesName == null
+              ? null
+              : fbb.writeString(object.sAcDesName!);
+          final sSelectDrCrOffset = object.sSelectDrCr == null
+              ? null
+              : fbb.writeString(object.sSelectDrCr!);
+          final sDrBalanceOffset = object.sDrBalance == null
+              ? null
+              : fbb.writeString(object.sDrBalance!);
+          final sCrBalanceOffset = object.sCrBalance == null
+              ? null
+              : fbb.writeString(object.sCrBalance!);
+          final sBalanceOffset = object.sBalance == null
+              ? null
+              : fbb.writeString(object.sBalance!);
+          final sTotalBalanceOffset = object.sTotalBalance == null
+              ? null
+              : fbb.writeString(object.sTotalBalance!);
+          final sCommentsOffset = object.sComments == null
+              ? null
+              : fbb.writeString(object.sComments!);
+          final accountNoOffset = object.accountNo == null
+              ? null
+              : fbb.writeString(object.accountNo!);
+          final nameOffset =
+              object.name == null ? null : fbb.writeString(object.name!);
+          final acSectorIdOffset = object.acSectorId == null
+              ? null
+              : fbb.writeString(object.acSectorId!);
+          final acSectorNameOffset = object.acSectorName == null
+              ? null
+              : fbb.writeString(object.acSectorName!);
+          final acDesIdOffset =
+              object.acDesId == null ? null : fbb.writeString(object.acDesId!);
+          final acDesNameOffset = object.acDesName == null
+              ? null
+              : fbb.writeString(object.acDesName!);
+          final selectDrCrOffset = object.selectDrCr == null
+              ? null
+              : fbb.writeString(object.selectDrCr!);
+          final drAmountOffset = object.drAmount == null
+              ? null
+              : fbb.writeString(object.drAmount!);
+          final crAmountOffset = object.crAmount == null
+              ? null
+              : fbb.writeString(object.crAmount!);
+          final balanceOffset =
+              object.balance == null ? null : fbb.writeString(object.balance!);
+          final totalBalanceOffset = object.totalBalance == null
+              ? null
+              : fbb.writeString(object.totalBalance!);
+          final commentsOffset = object.comments == null
+              ? null
+              : fbb.writeString(object.comments!);
+          final ppSNameOffset =
+              object.ppSName == null ? null : fbb.writeString(object.ppSName!);
+          final serialOffset =
+              object.serial == null ? null : fbb.writeString(object.serial!);
+          final kistiOffset =
+              object.kisti == null ? null : fbb.writeString(object.kisti!);
+          final checkValueOffset = object.checkValue == null
+              ? null
+              : fbb.writeString(object.checkValue!);
+          final ccOffset =
+              object.cc == null ? null : fbb.writeString(object.cc!);
+          final soCodeOffset =
+              object.soCode == null ? null : fbb.writeString(object.soCode!);
+          final passwordOffset = object.password == null
+              ? null
+              : fbb.writeString(object.password!);
+          final phoneNoOffset =
+              object.phoneNo == null ? null : fbb.writeString(object.phoneNo!);
+          final barirCodeOffset = object.barirCode == null
+              ? null
+              : fbb.writeString(object.barirCode!);
+          final withdrawOffset = object.withdraw == null
+              ? null
+              : fbb.writeString(object.withdraw!);
+          final nameSabekCashOffset = object.nameSabekCash == null
+              ? null
+              : fbb.writeString(object.nameSabekCash!);
+          final invoiceOffset =
+              object.invoice == null ? null : fbb.writeString(object.invoice!);
+          final kaliyaAcOffset = object.kaliyaAc == null
+              ? null
+              : fbb.writeString(object.kaliyaAc!);
+          final opCodeOffset =
+              object.opCode == null ? null : fbb.writeString(object.opCode!);
+          final kistiSaleOffset = object.kistiSale == null
+              ? null
+              : fbb.writeString(object.kistiSale!);
+          final aOffset = object.a == null ? null : fbb.writeString(object.a!);
+          final bOffset = object.b == null ? null : fbb.writeString(object.b!);
+          final commentOffset =
+              object.comment == null ? null : fbb.writeString(object.comment!);
+          final adayTakaOffset = object.adayTaka == null
+              ? null
+              : fbb.writeString(object.adayTaka!);
+          final currentSonchoyOffset = object.currentSonchoy == null
+              ? null
+              : fbb.writeString(object.currentSonchoy!);
+          final jomakarirNameOffset = object.jomakarirName == null
+              ? null
+              : fbb.writeString(object.jomakarirName!);
+          final cashJomaOffset = object.cashJoma == null
+              ? null
+              : fbb.writeString(object.cashJoma!);
+          final qTotalOffset =
+              object.qTotal == null ? null : fbb.writeString(object.qTotal!);
+          final cashierNameOffset = object.cashierName == null
+              ? null
+              : fbb.writeString(object.cashierName!);
+          final adayBiboronOffset = object.adayBiboron == null
+              ? null
+              : fbb.writeString(object.adayBiboron!);
+          final cashKhaSNameOffset = object.cashKhaSName == null
+              ? null
+              : fbb.writeString(object.cashKhaSName!);
+          final cashKhaSNumbOffset = object.cashKhaSNumb == null
+              ? null
+              : fbb.writeString(object.cashKhaSNumb!);
+          final submitByOffset = object.submitBy == null
+              ? null
+              : fbb.writeString(object.submitBy!);
+          final jomakarirIdOffset = object.jomakarirId == null
+              ? null
+              : fbb.writeString(object.jomakarirId!);
+          final date2Offset =
+              object.date2 == null ? null : fbb.writeString(object.date2!);
+          final value2Offset =
+              object.value2 == null ? null : fbb.writeString(object.value2!);
+          final cSoCodeOffset =
+              object.cSoCode == null ? null : fbb.writeString(object.cSoCode!);
+          final pokkyJomakarirNameOffset = object.pokkyJomakarirName == null
+              ? null
+              : fbb.writeString(object.pokkyJomakarirName!);
+          final chk5Offset =
+              object.chk5 == null ? null : fbb.writeString(object.chk5!);
+          final checkValue2Offset = object.checkValue2 == null
+              ? null
+              : fbb.writeString(object.checkValue2!);
+          final kistiRepostingOffset = object.kistiReposting == null
+              ? null
+              : fbb.writeString(object.kistiReposting!);
+          final oldSl2Offset =
+              object.oldSl2 == null ? null : fbb.writeString(object.oldSl2!);
+          final srDhoronOffset = object.srDhoron == null
+              ? null
+              : fbb.writeString(object.srDhoron!);
+          final meyadOffset =
+              object.meyad == null ? null : fbb.writeString(object.meyad!);
+          final sonchoyDueTakaOffset = object.sonchoyDueTaka == null
+              ? null
+              : fbb.writeString(object.sonchoyDueTaka!);
+          final kistiDueTakaOffset = object.kistiDueTaka == null
+              ? null
+              : fbb.writeString(object.kistiDueTaka!);
+          final pCodeOffset =
+              object.pCode == null ? null : fbb.writeString(object.pCode!);
+          final collectionBarOffset = object.collectionBar == null
+              ? null
+              : fbb.writeString(object.collectionBar!);
+          fbb.startTable(72);
+          fbb.addInt64(0, object.id ?? 0);
+          fbb.addOffset(1, receiptNumOffset);
+          fbb.addOffset(2, sl2Offset);
+          fbb.addOffset(3, dateOffset);
+          fbb.addOffset(4, sIdCSOffset);
+          fbb.addOffset(5, sNameOffset);
+          fbb.addOffset(6, sAcSectorIdOffset);
+          fbb.addOffset(7, sAcSectorNameOffset);
+          fbb.addOffset(8, sAcDesIdOffset);
+          fbb.addOffset(9, sAcDesNameOffset);
+          fbb.addOffset(10, sSelectDrCrOffset);
+          fbb.addOffset(11, sDrBalanceOffset);
+          fbb.addOffset(12, sCrBalanceOffset);
+          fbb.addOffset(13, sBalanceOffset);
+          fbb.addOffset(14, sTotalBalanceOffset);
+          fbb.addOffset(15, sCommentsOffset);
+          fbb.addOffset(16, accountNoOffset);
+          fbb.addOffset(17, nameOffset);
+          fbb.addOffset(18, acSectorIdOffset);
+          fbb.addOffset(19, acSectorNameOffset);
+          fbb.addOffset(20, acDesIdOffset);
+          fbb.addOffset(21, acDesNameOffset);
+          fbb.addOffset(22, selectDrCrOffset);
+          fbb.addOffset(23, drAmountOffset);
+          fbb.addOffset(24, crAmountOffset);
+          fbb.addOffset(25, balanceOffset);
+          fbb.addOffset(26, totalBalanceOffset);
+          fbb.addOffset(27, commentsOffset);
+          fbb.addOffset(28, ppSNameOffset);
+          fbb.addOffset(29, serialOffset);
+          fbb.addOffset(30, kistiOffset);
+          fbb.addOffset(31, checkValueOffset);
+          fbb.addOffset(32, ccOffset);
+          fbb.addOffset(33, soCodeOffset);
+          fbb.addOffset(34, passwordOffset);
+          fbb.addOffset(35, phoneNoOffset);
+          fbb.addOffset(36, barirCodeOffset);
+          fbb.addOffset(37, withdrawOffset);
+          fbb.addOffset(38, nameSabekCashOffset);
+          fbb.addOffset(39, invoiceOffset);
+          fbb.addOffset(40, kaliyaAcOffset);
+          fbb.addOffset(41, opCodeOffset);
+          fbb.addOffset(42, kistiSaleOffset);
+          fbb.addOffset(43, aOffset);
+          fbb.addOffset(44, bOffset);
+          fbb.addOffset(45, commentOffset);
+          fbb.addOffset(46, adayTakaOffset);
+          fbb.addOffset(47, currentSonchoyOffset);
+          fbb.addOffset(48, jomakarirNameOffset);
+          fbb.addOffset(49, cashJomaOffset);
+          fbb.addOffset(50, qTotalOffset);
+          fbb.addOffset(51, cashierNameOffset);
+          fbb.addOffset(52, adayBiboronOffset);
+          fbb.addOffset(53, cashKhaSNameOffset);
+          fbb.addOffset(54, cashKhaSNumbOffset);
+          fbb.addOffset(55, submitByOffset);
+          fbb.addOffset(56, jomakarirIdOffset);
+          fbb.addOffset(57, date2Offset);
+          fbb.addOffset(58, value2Offset);
+          fbb.addOffset(59, cSoCodeOffset);
+          fbb.addOffset(60, pokkyJomakarirNameOffset);
+          fbb.addOffset(61, chk5Offset);
+          fbb.addOffset(62, checkValue2Offset);
+          fbb.addOffset(63, kistiRepostingOffset);
+          fbb.addOffset(64, oldSl2Offset);
+          fbb.addOffset(65, srDhoronOffset);
+          fbb.addOffset(66, meyadOffset);
+          fbb.addOffset(67, sonchoyDueTakaOffset);
+          fbb.addOffset(68, kistiDueTakaOffset);
+          fbb.addOffset(69, pCodeOffset);
+          fbb.addOffset(70, collectionBarOffset);
+          fbb.finish(fbb.endTable());
+          return object.id ?? 0;
+        },
+        objectFromFB: (Store store, ByteData fbData) {
+          final buffer = fb.BufferContext(fbData);
+          final rootOffset = buffer.derefObject(0);
+
+          final object = BokeyaKistiSchema(
               id: const fb.Int64Reader()
                   .vTableGetNullable(buffer, rootOffset, 4),
               receiptNum: const fb.StringReader(asciiOptimization: true)
@@ -4184,4 +4902,291 @@ class BokeyaSonchoySchema_ {
   /// see [BokeyaSonchoySchema.collectionBar]
   static final collectionBar =
       QueryStringProperty<BokeyaSonchoySchema>(_entities[5].properties[70]);
+}
+
+/// [BokeyaKistiSchema] entity fields to define ObjectBox queries.
+class BokeyaKistiSchema_ {
+  /// see [BokeyaKistiSchema.id]
+  static final id =
+      QueryIntegerProperty<BokeyaKistiSchema>(_entities[6].properties[0]);
+
+  /// see [BokeyaKistiSchema.receiptNum]
+  static final receiptNum =
+      QueryStringProperty<BokeyaKistiSchema>(_entities[6].properties[1]);
+
+  /// see [BokeyaKistiSchema.sl2]
+  static final sl2 =
+      QueryStringProperty<BokeyaKistiSchema>(_entities[6].properties[2]);
+
+  /// see [BokeyaKistiSchema.date]
+  static final date =
+      QueryStringProperty<BokeyaKistiSchema>(_entities[6].properties[3]);
+
+  /// see [BokeyaKistiSchema.sIdCS]
+  static final sIdCS =
+      QueryStringProperty<BokeyaKistiSchema>(_entities[6].properties[4]);
+
+  /// see [BokeyaKistiSchema.sName]
+  static final sName =
+      QueryStringProperty<BokeyaKistiSchema>(_entities[6].properties[5]);
+
+  /// see [BokeyaKistiSchema.sAcSectorId]
+  static final sAcSectorId =
+      QueryStringProperty<BokeyaKistiSchema>(_entities[6].properties[6]);
+
+  /// see [BokeyaKistiSchema.sAcSectorName]
+  static final sAcSectorName =
+      QueryStringProperty<BokeyaKistiSchema>(_entities[6].properties[7]);
+
+  /// see [BokeyaKistiSchema.sAcDesId]
+  static final sAcDesId =
+      QueryStringProperty<BokeyaKistiSchema>(_entities[6].properties[8]);
+
+  /// see [BokeyaKistiSchema.sAcDesName]
+  static final sAcDesName =
+      QueryStringProperty<BokeyaKistiSchema>(_entities[6].properties[9]);
+
+  /// see [BokeyaKistiSchema.sSelectDrCr]
+  static final sSelectDrCr =
+      QueryStringProperty<BokeyaKistiSchema>(_entities[6].properties[10]);
+
+  /// see [BokeyaKistiSchema.sDrBalance]
+  static final sDrBalance =
+      QueryStringProperty<BokeyaKistiSchema>(_entities[6].properties[11]);
+
+  /// see [BokeyaKistiSchema.sCrBalance]
+  static final sCrBalance =
+      QueryStringProperty<BokeyaKistiSchema>(_entities[6].properties[12]);
+
+  /// see [BokeyaKistiSchema.sBalance]
+  static final sBalance =
+      QueryStringProperty<BokeyaKistiSchema>(_entities[6].properties[13]);
+
+  /// see [BokeyaKistiSchema.sTotalBalance]
+  static final sTotalBalance =
+      QueryStringProperty<BokeyaKistiSchema>(_entities[6].properties[14]);
+
+  /// see [BokeyaKistiSchema.sComments]
+  static final sComments =
+      QueryStringProperty<BokeyaKistiSchema>(_entities[6].properties[15]);
+
+  /// see [BokeyaKistiSchema.accountNo]
+  static final accountNo =
+      QueryStringProperty<BokeyaKistiSchema>(_entities[6].properties[16]);
+
+  /// see [BokeyaKistiSchema.name]
+  static final name =
+      QueryStringProperty<BokeyaKistiSchema>(_entities[6].properties[17]);
+
+  /// see [BokeyaKistiSchema.acSectorId]
+  static final acSectorId =
+      QueryStringProperty<BokeyaKistiSchema>(_entities[6].properties[18]);
+
+  /// see [BokeyaKistiSchema.acSectorName]
+  static final acSectorName =
+      QueryStringProperty<BokeyaKistiSchema>(_entities[6].properties[19]);
+
+  /// see [BokeyaKistiSchema.acDesId]
+  static final acDesId =
+      QueryStringProperty<BokeyaKistiSchema>(_entities[6].properties[20]);
+
+  /// see [BokeyaKistiSchema.acDesName]
+  static final acDesName =
+      QueryStringProperty<BokeyaKistiSchema>(_entities[6].properties[21]);
+
+  /// see [BokeyaKistiSchema.selectDrCr]
+  static final selectDrCr =
+      QueryStringProperty<BokeyaKistiSchema>(_entities[6].properties[22]);
+
+  /// see [BokeyaKistiSchema.drAmount]
+  static final drAmount =
+      QueryStringProperty<BokeyaKistiSchema>(_entities[6].properties[23]);
+
+  /// see [BokeyaKistiSchema.crAmount]
+  static final crAmount =
+      QueryStringProperty<BokeyaKistiSchema>(_entities[6].properties[24]);
+
+  /// see [BokeyaKistiSchema.balance]
+  static final balance =
+      QueryStringProperty<BokeyaKistiSchema>(_entities[6].properties[25]);
+
+  /// see [BokeyaKistiSchema.totalBalance]
+  static final totalBalance =
+      QueryStringProperty<BokeyaKistiSchema>(_entities[6].properties[26]);
+
+  /// see [BokeyaKistiSchema.comments]
+  static final comments =
+      QueryStringProperty<BokeyaKistiSchema>(_entities[6].properties[27]);
+
+  /// see [BokeyaKistiSchema.ppSName]
+  static final ppSName =
+      QueryStringProperty<BokeyaKistiSchema>(_entities[6].properties[28]);
+
+  /// see [BokeyaKistiSchema.serial]
+  static final serial =
+      QueryStringProperty<BokeyaKistiSchema>(_entities[6].properties[29]);
+
+  /// see [BokeyaKistiSchema.kisti]
+  static final kisti =
+      QueryStringProperty<BokeyaKistiSchema>(_entities[6].properties[30]);
+
+  /// see [BokeyaKistiSchema.checkValue]
+  static final checkValue =
+      QueryStringProperty<BokeyaKistiSchema>(_entities[6].properties[31]);
+
+  /// see [BokeyaKistiSchema.cc]
+  static final cc =
+      QueryStringProperty<BokeyaKistiSchema>(_entities[6].properties[32]);
+
+  /// see [BokeyaKistiSchema.soCode]
+  static final soCode =
+      QueryStringProperty<BokeyaKistiSchema>(_entities[6].properties[33]);
+
+  /// see [BokeyaKistiSchema.password]
+  static final password =
+      QueryStringProperty<BokeyaKistiSchema>(_entities[6].properties[34]);
+
+  /// see [BokeyaKistiSchema.phoneNo]
+  static final phoneNo =
+      QueryStringProperty<BokeyaKistiSchema>(_entities[6].properties[35]);
+
+  /// see [BokeyaKistiSchema.barirCode]
+  static final barirCode =
+      QueryStringProperty<BokeyaKistiSchema>(_entities[6].properties[36]);
+
+  /// see [BokeyaKistiSchema.withdraw]
+  static final withdraw =
+      QueryStringProperty<BokeyaKistiSchema>(_entities[6].properties[37]);
+
+  /// see [BokeyaKistiSchema.nameSabekCash]
+  static final nameSabekCash =
+      QueryStringProperty<BokeyaKistiSchema>(_entities[6].properties[38]);
+
+  /// see [BokeyaKistiSchema.invoice]
+  static final invoice =
+      QueryStringProperty<BokeyaKistiSchema>(_entities[6].properties[39]);
+
+  /// see [BokeyaKistiSchema.kaliyaAc]
+  static final kaliyaAc =
+      QueryStringProperty<BokeyaKistiSchema>(_entities[6].properties[40]);
+
+  /// see [BokeyaKistiSchema.opCode]
+  static final opCode =
+      QueryStringProperty<BokeyaKistiSchema>(_entities[6].properties[41]);
+
+  /// see [BokeyaKistiSchema.kistiSale]
+  static final kistiSale =
+      QueryStringProperty<BokeyaKistiSchema>(_entities[6].properties[42]);
+
+  /// see [BokeyaKistiSchema.a]
+  static final a =
+      QueryStringProperty<BokeyaKistiSchema>(_entities[6].properties[43]);
+
+  /// see [BokeyaKistiSchema.b]
+  static final b =
+      QueryStringProperty<BokeyaKistiSchema>(_entities[6].properties[44]);
+
+  /// see [BokeyaKistiSchema.comment]
+  static final comment =
+      QueryStringProperty<BokeyaKistiSchema>(_entities[6].properties[45]);
+
+  /// see [BokeyaKistiSchema.adayTaka]
+  static final adayTaka =
+      QueryStringProperty<BokeyaKistiSchema>(_entities[6].properties[46]);
+
+  /// see [BokeyaKistiSchema.currentSonchoy]
+  static final currentSonchoy =
+      QueryStringProperty<BokeyaKistiSchema>(_entities[6].properties[47]);
+
+  /// see [BokeyaKistiSchema.jomakarirName]
+  static final jomakarirName =
+      QueryStringProperty<BokeyaKistiSchema>(_entities[6].properties[48]);
+
+  /// see [BokeyaKistiSchema.cashJoma]
+  static final cashJoma =
+      QueryStringProperty<BokeyaKistiSchema>(_entities[6].properties[49]);
+
+  /// see [BokeyaKistiSchema.qTotal]
+  static final qTotal =
+      QueryStringProperty<BokeyaKistiSchema>(_entities[6].properties[50]);
+
+  /// see [BokeyaKistiSchema.cashierName]
+  static final cashierName =
+      QueryStringProperty<BokeyaKistiSchema>(_entities[6].properties[51]);
+
+  /// see [BokeyaKistiSchema.adayBiboron]
+  static final adayBiboron =
+      QueryStringProperty<BokeyaKistiSchema>(_entities[6].properties[52]);
+
+  /// see [BokeyaKistiSchema.cashKhaSName]
+  static final cashKhaSName =
+      QueryStringProperty<BokeyaKistiSchema>(_entities[6].properties[53]);
+
+  /// see [BokeyaKistiSchema.cashKhaSNumb]
+  static final cashKhaSNumb =
+      QueryStringProperty<BokeyaKistiSchema>(_entities[6].properties[54]);
+
+  /// see [BokeyaKistiSchema.submitBy]
+  static final submitBy =
+      QueryStringProperty<BokeyaKistiSchema>(_entities[6].properties[55]);
+
+  /// see [BokeyaKistiSchema.jomakarirId]
+  static final jomakarirId =
+      QueryStringProperty<BokeyaKistiSchema>(_entities[6].properties[56]);
+
+  /// see [BokeyaKistiSchema.date2]
+  static final date2 =
+      QueryStringProperty<BokeyaKistiSchema>(_entities[6].properties[57]);
+
+  /// see [BokeyaKistiSchema.value2]
+  static final value2 =
+      QueryStringProperty<BokeyaKistiSchema>(_entities[6].properties[58]);
+
+  /// see [BokeyaKistiSchema.cSoCode]
+  static final cSoCode =
+      QueryStringProperty<BokeyaKistiSchema>(_entities[6].properties[59]);
+
+  /// see [BokeyaKistiSchema.pokkyJomakarirName]
+  static final pokkyJomakarirName =
+      QueryStringProperty<BokeyaKistiSchema>(_entities[6].properties[60]);
+
+  /// see [BokeyaKistiSchema.chk5]
+  static final chk5 =
+      QueryStringProperty<BokeyaKistiSchema>(_entities[6].properties[61]);
+
+  /// see [BokeyaKistiSchema.checkValue2]
+  static final checkValue2 =
+      QueryStringProperty<BokeyaKistiSchema>(_entities[6].properties[62]);
+
+  /// see [BokeyaKistiSchema.kistiReposting]
+  static final kistiReposting =
+      QueryStringProperty<BokeyaKistiSchema>(_entities[6].properties[63]);
+
+  /// see [BokeyaKistiSchema.oldSl2]
+  static final oldSl2 =
+      QueryStringProperty<BokeyaKistiSchema>(_entities[6].properties[64]);
+
+  /// see [BokeyaKistiSchema.srDhoron]
+  static final srDhoron =
+      QueryStringProperty<BokeyaKistiSchema>(_entities[6].properties[65]);
+
+  /// see [BokeyaKistiSchema.meyad]
+  static final meyad =
+      QueryStringProperty<BokeyaKistiSchema>(_entities[6].properties[66]);
+
+  /// see [BokeyaKistiSchema.sonchoyDueTaka]
+  static final sonchoyDueTaka =
+      QueryStringProperty<BokeyaKistiSchema>(_entities[6].properties[67]);
+
+  /// see [BokeyaKistiSchema.kistiDueTaka]
+  static final kistiDueTaka =
+      QueryStringProperty<BokeyaKistiSchema>(_entities[6].properties[68]);
+
+  /// see [BokeyaKistiSchema.pCode]
+  static final pCode =
+      QueryStringProperty<BokeyaKistiSchema>(_entities[6].properties[69]);
+
+  /// see [BokeyaKistiSchema.collectionBar]
+  static final collectionBar =
+      QueryStringProperty<BokeyaKistiSchema>(_entities[6].properties[70]);
 }

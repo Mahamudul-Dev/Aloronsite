@@ -24,6 +24,7 @@ class CollectionSheetController extends GetxController {
   RxBool isSheetComplete = false.obs;
   final dio = Dio();
   DateTime? selectedDate;
+  RxList<CollectionSheetEntity> sheet = <CollectionSheetEntity>[].obs;
 
   List<DropdownMenuItem<String>> weekdays() {
     return [
@@ -91,12 +92,15 @@ class CollectionSheetController extends GetxController {
   Future<List<CollectionSheetEntity>?> getSheet() async {
     isLoading.value = true;
     if (isSheetLoaded.value || CacheDb().getSheetStatus()) {
+      sheet.clear();
+      sheet.addAll(dbHelper.getCollectionSheet());
       return Future.value(dbHelper.getCollectionSheet());
     } else {
       if (selectedDate != null) {
         if (_getDayName(selectedDate!) != selectedDay.value) {
           Get.snackbar('Sorry', 'Day not matching with date');
           isLoading.value = false;
+          sheet.clear();
           return Future.value();
         } else {
           Map<String, dynamic> query = {
@@ -121,7 +125,8 @@ class CollectionSheetController extends GetxController {
                 await dbHelper
                     .saveCollectionSheet(CollectionSheetModel.fromJson(i));
               }
-
+              sheet.clear();
+              sheet.addAll(dbHelper.getCollectionSheet());
               return Future.value(dbHelper.getCollectionSheet());
             } else {
               Logger().e(response.data);
@@ -129,18 +134,23 @@ class CollectionSheetController extends GetxController {
                   'Opps!', 'An there was a error when loading data sheet');
               isLoading.value = false;
             }
+            sheet.clear();
+            sheet.addAll(dbHelper.getCollectionSheet());
             return Future.value(dbHelper.getCollectionSheet());
           } catch (e) {
             isLoading.value = false;
             Logger().e(e);
           }
           isLoading.value = false;
+          sheet.clear();
+          sheet.addAll(dbHelper.getCollectionSheet());
           return Future.value(dbHelper.getCollectionSheet());
         }
       }
     }
     isLoading.value = false;
     Get.snackbar('Opps', 'Please Select Date & Day');
+    sheet.clear();
     return Future.value(null);
   }
 

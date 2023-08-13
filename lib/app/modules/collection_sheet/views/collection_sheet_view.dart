@@ -7,7 +7,6 @@ import 'package:aloronsite/database/objectbox_db/collection_sheet_schema.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
-import 'package:number_paginator/number_paginator.dart';
 
 import '../controllers/collection_sheet_controller.dart';
 
@@ -39,7 +38,7 @@ class CollectionSheetView extends GetView<CollectionSheetController> {
                     AsyncSnapshot<List<CollectionSheetEntity>?> snapshot) {
                   if (snapshot.hasData) {
                     return ListView.separated(
-                      itemCount: snapshot.data!.length + 1,
+                      itemCount: controller.sheet.length + 1,
                       itemBuilder: (context, index) {
                         if (index == 0) {
                           return Padding(
@@ -112,29 +111,27 @@ class CollectionSheetView extends GetView<CollectionSheetController> {
                                       )),
                                 ),
                                 const SizedBox(width: 8),
-                                Text('Result: ${snapshot.data?.length}')
+                                Obx(() => Text('Result: ${controller.sheet.length}'))
                               ],
                             ),
                           );
                         }
                         return CollectionItemView(
                           serial:
-                              snapshot.data?[index - 1].serial.toString() ?? '',
+                          controller.sheet[index - 1].serial.toString() ?? '',
                           bSodossoName:
-                              snapshot.data?[index - 1].bSodossoName ?? '',
-                          barirName: snapshot.data?[index - 1].barirName ?? '',
-                          sonchoyStatus: snapshot
-                                  .data?[index - 1].sonchoyCollectionStatus
+                          controller.sheet[index - 1].bSodossoName ?? '',
+                          barirName: controller.sheet[index - 1].barirName ?? '',
+                          sonchoyStatus: controller.sheet[index - 1].sonchoyCollectionStatus
                                   .toString() ??
                               '',
-                          kistiCollectionStatus: snapshot
-                                  .data?[index - 1].kistiCollectionStatus
+                          kistiCollectionStatus: controller.sheet[index - 1].kistiCollectionStatus
                                   .toString() ??
                               '',
-                          sonchoy: snapshot.data?[index - 1].sonchoy ?? '',
-                          kisti: snapshot.data?[index - 1].kisti ?? '',
+                          sonchoy: controller.sheet[index - 1].sonchoy ?? '',
+                          kisti: controller.sheet[index - 1].kisti ?? '',
                           onPressed: () => Get.toNamed(Routes.RECIPT_UPLOAD,
-                              arguments: {'object': snapshot.data?[index - 1]}),
+                              arguments: {'object': controller.sheet[index - 1]}),
                         );
                       },
                       separatorBuilder: (BuildContext context, int index) {

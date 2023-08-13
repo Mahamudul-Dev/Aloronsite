@@ -27,7 +27,7 @@ class ProgressTab extends StatelessWidget {
         SizedBox(
           width: 70,
           child: CircularStepProgressIndicator(
-          totalSteps: totalFileCount,
+          totalSteps: totalFileCount > 0 ? totalFileCount : 1,
           currentStep: onlineUploadedFileCount,
           stepSize: 6.0,
           selectedColor: progressBarColor,

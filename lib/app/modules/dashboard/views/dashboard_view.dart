@@ -47,30 +47,30 @@ class DashboardView extends GetView<DashboardController> {
           ),
 
           const SizedBox(height: 10),
-          const ProgressTab(
+          ProgressTab(
             title: 'Bokeya Sonchoy Status',
             fileName: 'sonchoy',
-            totalFileCount: 50,
+            totalFileCount: controller.dbHelper.getBokeyaSonchoySchema().length,
             onlineUploadedFileCount: 10,
             progressBarColor: Colors.greenAccent,
             backgroundColor: Colors.orange,
           ),
 
           const SizedBox(height: 10),
-          const ProgressTab(
+          ProgressTab(
             title: 'Kisti Status',
             fileName: 'kisti',
-            totalFileCount: 700,
+            totalFileCount: controller.dbHelper.getKistiSchema().length,
             onlineUploadedFileCount: 300,
             progressBarColor: Colors.greenAccent,
             backgroundColor: Colors.blue,
           ),
 
           const SizedBox(height: 10),
-          const ProgressTab(
+          ProgressTab(
             title: 'Bokeya Kisti Status',
             fileName: 'kisti',
-            totalFileCount: 80,
+            totalFileCount: controller.dbHelper.getBokeyaKistiSchema().length,
             onlineUploadedFileCount: 10,
             progressBarColor: Colors.greenAccent,
             backgroundColor: Colors.red,

@@ -213,7 +213,9 @@ class _SonchoySubmitViewState extends State<SonchoySubmitView> {
                     )),
                 const SizedBox(height: 8),
                 ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      controller.submitBokeyaSonchoy(collection, context);
+                    },
                     style: const ButtonStyle(
                         backgroundColor: MaterialStatePropertyAll(Colors.orange)),
                     child: Text(
@@ -225,7 +227,9 @@ class _SonchoySubmitViewState extends State<SonchoySubmitView> {
                     )),
                 const SizedBox(height: 8),
                 ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      controller.submitKisti(collection, context);
+                    },
                     style: const ButtonStyle(
                         backgroundColor: MaterialStatePropertyAll(Colors.blue)),
                     child: Text(
@@ -237,7 +241,9 @@ class _SonchoySubmitViewState extends State<SonchoySubmitView> {
                     )),
                 const SizedBox(height: 8),
                 ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      controller.submitBokeyaKisti(collection, context);
+                    },
                     style: const ButtonStyle(
                         backgroundColor: MaterialStatePropertyAll(Colors.red)),
                     child: Text(
