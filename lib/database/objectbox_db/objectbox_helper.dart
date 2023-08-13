@@ -29,36 +29,36 @@ class ObjectboxHelper {
   Future<void> saveCollectionSheet(CollectionSheetModel sheet) {
       final collection = CollectionSheetEntity(
           date: sheet.date ?? '',
-          soCode: sheet.soCode ?? 00,
+          soCode: sheet.soCode.toString(),
           accountNo: sheet.accountNo ?? '',
           opCode: sheet.opCode ?? '',
-          serial: sheet.serial,
+          serial: sheet.serial.toString(),
           sodossoName: sheet.sodossoName ?? '',
-          sodossoStatus: sheet.sodossoStatus ?? 00,
-          pCode: sheet.pCode ?? 00,
+          sodossoStatus: sheet.sodossoStatus.toString(),
+          pCode: sheet.pCode.toString(),
           collectionBar: sheet.collectionBar ?? '',
           sonchoyCollectionStatus:
-              sheet.sonchoyCollectionStatus ?? 00,
+              sheet.sonchoyCollectionStatus.toString(),
           kistiCollectionStatus:
-              sheet.kistiCollectionStatus ?? 00,
+              sheet.kistiCollectionStatus.toString(),
           gatewayCheckSonchoy:
-              sheet.gatewayCheckSonchoy ?? 00,
-          gatewayCheckKisti: sheet.gatewayCheckKisti ?? 00,
+              sheet.gatewayCheckSonchoy.toString(),
+          gatewayCheckKisti: sheet.gatewayCheckKisti.toString(),
           sep22: sheet.sep22 ?? '',
-          chk: sheet.chk ?? 00,
-          sonchoyBookBl: sheet.sonchoyBookBl ?? 00,
-          onlineSonchoyBl: sheet.onlineSonchoyBl ?? 00,
+          chk: sheet.chk.toString(),
+          sonchoyBookBl: sheet.sonchoyBookBl.toString(),
+          onlineSonchoyBl: sheet.onlineSonchoyBl.toString(),
           sonchoyPorikkito: sheet.sonchoyPorikkito ?? '',
-          kistiBookBl: sheet.kistiBookBl ?? 00,
-          onlineKistiBl: sheet.onlineSonchoyBl ?? 00,
+          kistiBookBl: sheet.kistiBookBl.toString(),
+          onlineKistiBl: sheet.onlineSonchoyBl.toString(),
           kistiPorikkito: sheet.kistiPorikkito ?? '',
           porikkhito: sheet.porikkhito ?? '',
           sonchoy: sheet.sonchoy ?? '',
           kisti: sheet.kisti ?? '',
           profitOfPerInstallment:
-              sheet.profitOfPerInstallment ?? 00,
-          barirCode: sheet.barirCode ?? 00,
-          walkOrder: sheet.walkOrder ?? 00,
+              sheet.profitOfPerInstallment.toString(),
+          barirCode: sheet.barirCode.toString(),
+          walkOrder: sheet.walkOrder.toString(),
           barirNameE: sheet.barirNameE ?? '',
           barirName: sheet.barirName ?? '',
           elakarName: sheet.elakarName ?? '',
@@ -66,17 +66,17 @@ class ObjectboxHelper {
           dollCode: sheet.dollCode ?? '',
           groupName: sheet.groupName ?? '',
           phoneNo: sheet.phoneNo ?? '',
-          cc: sheet.cc ?? 00,
-          chainNo: sheet.chainNo ?? 00,
+          cc: sheet.cc.toString(),
+          chainNo: sheet.chainNo.toString(),
           post: sheet.post ?? '',
-          ppost: sheet.ppost ?? 00,
+          ppost: sheet.ppost.toString(),
           name: sheet.name ?? '',
           address: sheet.address ?? '',
           kaliyaAc: sheet.kaliyaAc ?? '',
           comment: sheet.comment ?? '',
           userName: sheet.userName ?? '',
-          backSodosso: sheet.backSodosso ?? 00,
-          nextSodosso: sheet.nextSodosso ?? 00,
+          backSodosso: sheet.backSodosso.toString(),
+          nextSodosso: sheet.nextSodosso.toString(),
           pouseRelation: sheet.pouseRelation ?? '',
           pouseName: sheet.pouseName ?? '',
           pousePesha: sheet.pousePesha ?? '',
@@ -84,13 +84,13 @@ class ObjectboxHelper {
           branch: sheet.branch ?? '',
           timeStamp: sheet.timeStamp ?? '',
           submitBy: sheet.submitBy ?? '',
-          reBlPhoto: sheet.reBlPhoto ?? 00,
-          balanchingChk: sheet.balanchingChk ?? 00,
+          reBlPhoto: sheet.reBlPhoto.toString(),
+          balanchingChk: sheet.balanchingChk.toString(),
           superChk: sheet.superChk ?? '',
           activation: sheet.activation ?? '',
           sonchoyCollectionDate: sheet.sonchoyCollectionDate ?? '',
           kistiCollectionDate: sheet.kistiCollectionDate ?? '',
-          balance: sheet.balance ?? 00);
+          balance: sheet.balance.toString());
 
       if(collectionSheetBox.getAll().any((element) => element.sodossoName == collection.sodossoName && element.serial == collection.serial && element.name == collection.name)){
         return Future.value();
@@ -108,7 +108,12 @@ class ObjectboxHelper {
     await uploadPhotoBox.putAsync(photoSchema);
   }
 
-  Future<void> saveSonchoy(SonchoySchema schema)async{
+  Future<void> saveSonchoy(SonchoySchema schema, int id)async{
     await sonchoySubmitBox.putAsync(schema);
+    collectionSheetBox.remove(id);
+  }
+
+  List<SonchoySchema> getSonchoySchema(){
+    return sonchoySubmitBox.getAll();
   }
 }

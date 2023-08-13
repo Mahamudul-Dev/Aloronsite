@@ -9,69 +9,69 @@ class CollectionSheetEntity {
 
   String date;
 
-  @Property(type: PropertyType.int)
-  int soCode;
+  @Property()
+  String soCode;
 
   String accountNo;
   String opCode;
 
-  @Property(type: PropertyType.int)
-  int? serial;
+  @Property()
+  String? serial;
 
   String sodossoName;
 
-  @Property(type: PropertyType.int)
-  int sodossoStatus;
+  @Property()
+  String sodossoStatus;
 
-  @Property(type: PropertyType.int)
-  int pCode;
+  @Property()
+  String pCode;
 
   String collectionBar;
 
-  @Property(type: PropertyType.int)
-  int sonchoyCollectionStatus;
+  @Property()
+  String sonchoyCollectionStatus;
 
-  @Property(type: PropertyType.int)
-  int kistiCollectionStatus;
+  @Property()
+  String kistiCollectionStatus;
 
-  @Property(type: PropertyType.int)
-  int gatewayCheckSonchoy;
+  @Property()
+  String gatewayCheckSonchoy;
 
-  @Property(type: PropertyType.int)
-  int gatewayCheckKisti;
+  @Property()
+  String gatewayCheckKisti;
 
   String sep22;
 
-  @Property(type: PropertyType.int)
-  int chk;
+  @Property()
+  String chk;
 
-  @Property(type: PropertyType.int)
-  int sonchoyBookBl;
+  @Property()
+  String sonchoyBookBl;
 
-  @Property(type: PropertyType.int)
-  int onlineSonchoyBl;
+  @Property()
+  String onlineSonchoyBl;
 
   String sonchoyPorikkito;
 
-  @Property(type: PropertyType.int)
-  int kistiBookBl;
+  @Property()
+  String kistiBookBl;
 
-  @Property(type: PropertyType.int)
-  int onlineKistiBl;
+  @Property()
+  String onlineKistiBl;
 
   String kistiPorikkito;
   String porikkhito;
   String sonchoy;
   String kisti;
 
-  @Property(type: PropertyType.int)
-  int profitOfPerInstallment;
+  @Property()
+  String profitOfPerInstallment;
 
-  @Property(type: PropertyType.int)
-  int barirCode;
+  @Property()
+  String barirCode;
 
-  @Property(type: PropertyType.int)
-  int walkOrder;
+  @Property()
+  String walkOrder;
 
   String barirNameE;
   String barirName;
@@ -81,16 +81,16 @@ class CollectionSheetEntity {
   String groupName;
   String phoneNo;
 
-  @Property(type: PropertyType.int)
-  int cc;
+  @Property()
+  String cc;
 
-  @Property(type: PropertyType.int)
-  int chainNo;
+  @Property()
+  String chainNo;
 
   String post;
 
-  @Property(type: PropertyType.int)
-  int ppost;
+  @Property()
+  String ppost;
 
   String name;
   String address;
@@ -98,11 +98,11 @@ class CollectionSheetEntity {
   String comment;
   String userName;
 
-  @Property(type: PropertyType.int)
-  int backSodosso;
+  @Property()
+  String backSodosso;
 
-  @Property(type: PropertyType.int)
-  int nextSodosso;
+  @Property()
+  String nextSodosso;
 
   String pouseRelation;
   String pouseName;
@@ -112,11 +112,11 @@ class CollectionSheetEntity {
   String timeStamp;
   String submitBy;
 
-  @Property(type: PropertyType.int)
-  int reBlPhoto;
+  @Property()
+  String reBlPhoto;
 
-  @Property(type: PropertyType.int)
-  int balanchingChk;
+  @Property()
+  String balanchingChk;
 
   String superChk;
   String activation;
@@ -125,8 +125,8 @@ class CollectionSheetEntity {
   String sonchoyCollectionDate;
   String kistiCollectionDate;
 
-  @Property(type: PropertyType.int)
-  int balance;
+  @Property()
+  String balance;
 
   CollectionSheetEntity(
   {
@@ -195,34 +195,33 @@ class CollectionSheetEntity {
 
   factory CollectionSheetEntity.fromJson(Map<String, dynamic> json) {
     return CollectionSheetEntity(
-      id: json['id'] ?? 0,
       date: json['date'] ?? '',
-      soCode: json['soCode'] ?? 0,
+      soCode: json['soCode'] ?? '',
       accountNo: json['accountNo'] ?? '',
       opCode: json['opCode'] ?? '',
-      serial: json['serial'] ?? 0,
+      serial: json['serial'] ?? '',
       sodossoName: json['sodossoName'] ?? '',
-      sodossoStatus: json['sodossoStatus'] ?? 0,
-      pCode: json['pCode'] ?? 0,
+      sodossoStatus: json['sodossoStatus'] ?? '',
+      pCode: json['pCode'] ?? '',
       collectionBar: json['collectionBar'] ?? '',
-      sonchoyCollectionStatus: json['sonchoyCollectionStatus'] ?? 0,
-      kistiCollectionStatus: json['kistiCollectionStatus'] ?? 0,
-      gatewayCheckSonchoy: json['gatewayCheckSonchoy'] ?? 0,
-      gatewayCheckKisti: json['gatewayCheckKisti'] ?? 0,
+      sonchoyCollectionStatus: json['sonchoyCollectionStatus'] ?? '',
+      kistiCollectionStatus: json['kistiCollectionStatus'] ?? '',
+      gatewayCheckSonchoy: json['gatewayCheckSonchoy'] ?? '',
+      gatewayCheckKisti: json['gatewayCheckKisti'] ?? '',
       sep22: json['sep22'] ?? '',
-      chk: json['chk'] ?? 0,
-      sonchoyBookBl: json['sonchoyBookBl'] ?? 0,
-      onlineSonchoyBl: json['onlineSonchoyBl'] ?? 0,
+      chk: json['chk'] ?? '',
+      sonchoyBookBl: json['sonchoyBookBl'] ?? '',
+      onlineSonchoyBl: json['onlineSonchoyBl'] ?? '',
       sonchoyPorikkito: json['sonchoyPorikkito'] ?? '',
-      kistiBookBl: json['kistiBookBl'] ?? 0,
-      onlineKistiBl: json['onlineKistiBl'] ?? 0,
+      kistiBookBl: json['kistiBookBl'] ?? '',
+      onlineKistiBl: json['onlineKistiBl'] ?? '',
       kistiPorikkito: json['kistiPorikkito'] ?? '',
       porikkhito: json['porikkhito'] ?? '',
       sonchoy: json['sonchoy'] ?? '',
       kisti: json['kisti'] ?? '',
-      profitOfPerInstallment: json['profitOfPerInstallment'] ?? 0,
-      barirCode: json['barirCode'] ?? 0,
-      walkOrder: json['walkOrder'] ?? 0,
+      profitOfPerInstallment: json['profitOfPerInstallment'] ?? '',
+      barirCode: json['barirCode'] ?? '',
+      walkOrder: json['walkOrder'] ?? '',
       barirNameE: json['barirNameE'] ?? '',
       barirName: json['barirName'] ?? '',
       elakarName: json['elakarName'] ?? '',
@@ -230,17 +229,17 @@ class CollectionSheetEntity {
       dollCode: json['dollCode'] ?? '',
       groupName: json['groupName'] ?? '',
       phoneNo: json['phoneNo'] ?? '',
-      cc: json['cc'] ?? 0,
-      chainNo: json['chainNo'] ?? 0,
+      cc: json['cc'] ?? '',
+      chainNo: json['chainNo'] ?? '',
       post: json['post'] ?? '',
-      ppost: json['ppost'] ?? 0,
+      ppost: json['ppost'] ?? '',
       name: json['name'] ?? '',
       address: json['address'] ?? '',
       kaliyaAc: json['kaliyaAc'] ?? '',
       comment: json['comment'] ?? '',
       userName: json['userName'] ?? '',
-      backSodosso: json['backSodosso'] ?? 0,
-      nextSodosso: json['nextSodosso'] ?? 0,
+      backSodosso: json['backSodosso'] ?? '',
+      nextSodosso: json['nextSodosso'] ?? '',
       pouseRelation: json['pouseRelation'] ?? '',
       pouseName: json['pouseName'] ?? '',
       pousePesha: json['pousePesha'] ?? '',
@@ -248,20 +247,19 @@ class CollectionSheetEntity {
       branch: json['branch'] ?? '',
       timeStamp: json['timeStamp'] ?? '',
       submitBy: json['submitBy'] ?? '',
-      reBlPhoto: json['reBlPhoto'] ?? 0,
-      balanchingChk: json['balanchingChk'] ?? 0,
+      reBlPhoto: json['reBlPhoto'] ?? '',
+      balanchingChk: json['balanchingChk'] ?? '',
       superChk: json['superChk'] ?? '',
       activation: json['activation'] ?? '',
       sonchoyCollectionDate: json['sonchoyCollectionDate'] ?? '',
       kistiCollectionDate: json['kistiCollectionDate'] ?? '',
-      balance: json['balance'] ?? 0,
+      balance: json['balance'] ?? '',
     );
   }
 
   // Method to convert entity to JSON
   Map<String, dynamic> toJson() {
     return {
-      'id': id,
       'date': date,
       'soCode': soCode,
       'accountNo': accountNo,

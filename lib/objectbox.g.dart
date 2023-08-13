@@ -43,7 +43,7 @@ final _entities = <ModelEntity>[
         ModelProperty(
             id: const IdUid(3, 1205770801463449745),
             name: 'soCode',
-            type: 5,
+            type: 9,
             flags: 0),
         ModelProperty(
             id: const IdUid(4, 5655273713551473957),
@@ -58,7 +58,7 @@ final _entities = <ModelEntity>[
         ModelProperty(
             id: const IdUid(6, 8258008973300161015),
             name: 'serial',
-            type: 5,
+            type: 9,
             flags: 0),
         ModelProperty(
             id: const IdUid(7, 2582853333209112440),
@@ -68,12 +68,12 @@ final _entities = <ModelEntity>[
         ModelProperty(
             id: const IdUid(8, 6574941556591419559),
             name: 'sodossoStatus',
-            type: 5,
+            type: 9,
             flags: 0),
         ModelProperty(
             id: const IdUid(9, 8241831387325613681),
             name: 'pCode',
-            type: 5,
+            type: 9,
             flags: 0),
         ModelProperty(
             id: const IdUid(10, 6982094718805792127),
@@ -83,22 +83,22 @@ final _entities = <ModelEntity>[
         ModelProperty(
             id: const IdUid(11, 2564415181230228159),
             name: 'sonchoyCollectionStatus',
-            type: 5,
+            type: 9,
             flags: 0),
         ModelProperty(
             id: const IdUid(12, 5665712532915003125),
             name: 'kistiCollectionStatus',
-            type: 5,
+            type: 9,
             flags: 0),
         ModelProperty(
             id: const IdUid(13, 4327813667064721782),
             name: 'gatewayCheckSonchoy',
-            type: 5,
+            type: 9,
             flags: 0),
         ModelProperty(
             id: const IdUid(14, 1660684482716360377),
             name: 'gatewayCheckKisti',
-            type: 5,
+            type: 9,
             flags: 0),
         ModelProperty(
             id: const IdUid(15, 4951126433310227087),
@@ -108,17 +108,17 @@ final _entities = <ModelEntity>[
         ModelProperty(
             id: const IdUid(16, 1825448245060958682),
             name: 'chk',
-            type: 5,
+            type: 9,
             flags: 0),
         ModelProperty(
             id: const IdUid(17, 5720261666718278355),
             name: 'sonchoyBookBl',
-            type: 5,
+            type: 9,
             flags: 0),
         ModelProperty(
             id: const IdUid(18, 1640621002601229958),
             name: 'onlineSonchoyBl',
-            type: 5,
+            type: 9,
             flags: 0),
         ModelProperty(
             id: const IdUid(19, 2625799165278846441),
@@ -128,12 +128,12 @@ final _entities = <ModelEntity>[
         ModelProperty(
             id: const IdUid(20, 8038606452604658242),
             name: 'kistiBookBl',
-            type: 5,
+            type: 9,
             flags: 0),
         ModelProperty(
             id: const IdUid(21, 8317889711953308442),
             name: 'onlineKistiBl',
-            type: 5,
+            type: 9,
             flags: 0),
         ModelProperty(
             id: const IdUid(22, 6048198988264469584),
@@ -158,17 +158,17 @@ final _entities = <ModelEntity>[
         ModelProperty(
             id: const IdUid(26, 2024021199200360332),
             name: 'profitOfPerInstallment',
-            type: 5,
+            type: 9,
             flags: 0),
         ModelProperty(
             id: const IdUid(27, 3161434156103736915),
             name: 'barirCode',
-            type: 5,
+            type: 9,
             flags: 0),
         ModelProperty(
             id: const IdUid(28, 1093918572734157713),
             name: 'walkOrder',
-            type: 5,
+            type: 9,
             flags: 0),
         ModelProperty(
             id: const IdUid(29, 3865721501057893165),
@@ -208,12 +208,12 @@ final _entities = <ModelEntity>[
         ModelProperty(
             id: const IdUid(36, 5523401622611603234),
             name: 'cc',
-            type: 5,
+            type: 9,
             flags: 0),
         ModelProperty(
             id: const IdUid(37, 427299709527797822),
             name: 'chainNo',
-            type: 5,
+            type: 9,
             flags: 0),
         ModelProperty(
             id: const IdUid(38, 5660000748976081027),
@@ -223,7 +223,7 @@ final _entities = <ModelEntity>[
         ModelProperty(
             id: const IdUid(39, 3911257273229739306),
             name: 'ppost',
-            type: 5,
+            type: 9,
             flags: 0),
         ModelProperty(
             id: const IdUid(40, 2958747593346652669),
@@ -253,12 +253,12 @@ final _entities = <ModelEntity>[
         ModelProperty(
             id: const IdUid(45, 1417171877791499044),
             name: 'backSodosso',
-            type: 5,
+            type: 9,
             flags: 0),
         ModelProperty(
             id: const IdUid(46, 4559545292732076749),
             name: 'nextSodosso',
-            type: 5,
+            type: 9,
             flags: 0),
         ModelProperty(
             id: const IdUid(47, 5404353728528047027),
@@ -298,12 +298,12 @@ final _entities = <ModelEntity>[
         ModelProperty(
             id: const IdUid(54, 6118372202837627453),
             name: 'reBlPhoto',
-            type: 5,
+            type: 9,
             flags: 0),
         ModelProperty(
             id: const IdUid(55, 5690242270913085980),
             name: 'balanchingChk',
-            type: 5,
+            type: 9,
             flags: 0),
         ModelProperty(
             id: const IdUid(56, 6072042800188315501),
@@ -328,7 +328,7 @@ final _entities = <ModelEntity>[
         ModelProperty(
             id: const IdUid(60, 9178974960165556408),
             name: 'balance',
-            type: 5,
+            type: 9,
             flags: 0)
       ],
       relations: <ModelRelation>[],
@@ -1144,7 +1144,7 @@ final _entities = <ModelEntity>[
         ModelProperty(
             id: const IdUid(47, 6677213528978038722),
             name: 'adayTaka',
-            type: 8,
+            type: 9,
             flags: 0),
         ModelProperty(
             id: const IdUid(48, 8229399358224453518),
@@ -1709,17 +1709,39 @@ ModelDefinition getObjectBoxModel() {
         },
         objectToFB: (CollectionSheetEntity object, fb.Builder fbb) {
           final dateOffset = fbb.writeString(object.date);
+          final soCodeOffset = fbb.writeString(object.soCode);
           final accountNoOffset = fbb.writeString(object.accountNo);
           final opCodeOffset = fbb.writeString(object.opCode);
+          final serialOffset =
+              object.serial == null ? null : fbb.writeString(object.serial!);
           final sodossoNameOffset = fbb.writeString(object.sodossoName);
+          final sodossoStatusOffset = fbb.writeString(object.sodossoStatus);
+          final pCodeOffset = fbb.writeString(object.pCode);
           final collectionBarOffset = fbb.writeString(object.collectionBar);
+          final sonchoyCollectionStatusOffset =
+              fbb.writeString(object.sonchoyCollectionStatus);
+          final kistiCollectionStatusOffset =
+              fbb.writeString(object.kistiCollectionStatus);
+          final gatewayCheckSonchoyOffset =
+              fbb.writeString(object.gatewayCheckSonchoy);
+          final gatewayCheckKistiOffset =
+              fbb.writeString(object.gatewayCheckKisti);
           final sep22Offset = fbb.writeString(object.sep22);
+          final chkOffset = fbb.writeString(object.chk);
+          final sonchoyBookBlOffset = fbb.writeString(object.sonchoyBookBl);
+          final onlineSonchoyBlOffset = fbb.writeString(object.onlineSonchoyBl);
           final sonchoyPorikkitoOffset =
               fbb.writeString(object.sonchoyPorikkito);
+          final kistiBookBlOffset = fbb.writeString(object.kistiBookBl);
+          final onlineKistiBlOffset = fbb.writeString(object.onlineKistiBl);
           final kistiPorikkitoOffset = fbb.writeString(object.kistiPorikkito);
           final porikkhitoOffset = fbb.writeString(object.porikkhito);
           final sonchoyOffset = fbb.writeString(object.sonchoy);
           final kistiOffset = fbb.writeString(object.kisti);
+          final profitOfPerInstallmentOffset =
+              fbb.writeString(object.profitOfPerInstallment);
+          final barirCodeOffset = fbb.writeString(object.barirCode);
+          final walkOrderOffset = fbb.writeString(object.walkOrder);
           final barirNameEOffset = fbb.writeString(object.barirNameE);
           final barirNameOffset = fbb.writeString(object.barirName);
           final elakarNameOffset = fbb.writeString(object.elakarName);
@@ -1727,12 +1749,17 @@ ModelDefinition getObjectBoxModel() {
           final dollCodeOffset = fbb.writeString(object.dollCode);
           final groupNameOffset = fbb.writeString(object.groupName);
           final phoneNoOffset = fbb.writeString(object.phoneNo);
+          final ccOffset = fbb.writeString(object.cc);
+          final chainNoOffset = fbb.writeString(object.chainNo);
           final postOffset = fbb.writeString(object.post);
+          final ppostOffset = fbb.writeString(object.ppost);
           final nameOffset = fbb.writeString(object.name);
           final addressOffset = fbb.writeString(object.address);
           final kaliyaAcOffset = fbb.writeString(object.kaliyaAc);
           final commentOffset = fbb.writeString(object.comment);
           final userNameOffset = fbb.writeString(object.userName);
+          final backSodossoOffset = fbb.writeString(object.backSodosso);
+          final nextSodossoOffset = fbb.writeString(object.nextSodosso);
           final pouseRelationOffset = fbb.writeString(object.pouseRelation);
           final pouseNameOffset = fbb.writeString(object.pouseName);
           final pousePeshaOffset = fbb.writeString(object.pousePesha);
@@ -1740,41 +1767,44 @@ ModelDefinition getObjectBoxModel() {
           final branchOffset = fbb.writeString(object.branch);
           final timeStampOffset = fbb.writeString(object.timeStamp);
           final submitByOffset = fbb.writeString(object.submitBy);
+          final reBlPhotoOffset = fbb.writeString(object.reBlPhoto);
+          final balanchingChkOffset = fbb.writeString(object.balanchingChk);
           final superChkOffset = fbb.writeString(object.superChk);
           final activationOffset = fbb.writeString(object.activation);
           final sonchoyCollectionDateOffset =
               fbb.writeString(object.sonchoyCollectionDate);
           final kistiCollectionDateOffset =
               fbb.writeString(object.kistiCollectionDate);
+          final balanceOffset = fbb.writeString(object.balance);
           fbb.startTable(61);
           fbb.addInt64(0, object.id);
           fbb.addOffset(1, dateOffset);
-          fbb.addInt32(2, object.soCode);
+          fbb.addOffset(2, soCodeOffset);
           fbb.addOffset(3, accountNoOffset);
           fbb.addOffset(4, opCodeOffset);
-          fbb.addInt32(5, object.serial);
+          fbb.addOffset(5, serialOffset);
           fbb.addOffset(6, sodossoNameOffset);
-          fbb.addInt32(7, object.sodossoStatus);
-          fbb.addInt32(8, object.pCode);
+          fbb.addOffset(7, sodossoStatusOffset);
+          fbb.addOffset(8, pCodeOffset);
           fbb.addOffset(9, collectionBarOffset);
-          fbb.addInt32(10, object.sonchoyCollectionStatus);
-          fbb.addInt32(11, object.kistiCollectionStatus);
-          fbb.addInt32(12, object.gatewayCheckSonchoy);
-          fbb.addInt32(13, object.gatewayCheckKisti);
+          fbb.addOffset(10, sonchoyCollectionStatusOffset);
+          fbb.addOffset(11, kistiCollectionStatusOffset);
+          fbb.addOffset(12, gatewayCheckSonchoyOffset);
+          fbb.addOffset(13, gatewayCheckKistiOffset);
           fbb.addOffset(14, sep22Offset);
-          fbb.addInt32(15, object.chk);
-          fbb.addInt32(16, object.sonchoyBookBl);
-          fbb.addInt32(17, object.onlineSonchoyBl);
+          fbb.addOffset(15, chkOffset);
+          fbb.addOffset(16, sonchoyBookBlOffset);
+          fbb.addOffset(17, onlineSonchoyBlOffset);
           fbb.addOffset(18, sonchoyPorikkitoOffset);
-          fbb.addInt32(19, object.kistiBookBl);
-          fbb.addInt32(20, object.onlineKistiBl);
+          fbb.addOffset(19, kistiBookBlOffset);
+          fbb.addOffset(20, onlineKistiBlOffset);
           fbb.addOffset(21, kistiPorikkitoOffset);
           fbb.addOffset(22, porikkhitoOffset);
           fbb.addOffset(23, sonchoyOffset);
           fbb.addOffset(24, kistiOffset);
-          fbb.addInt32(25, object.profitOfPerInstallment);
-          fbb.addInt32(26, object.barirCode);
-          fbb.addInt32(27, object.walkOrder);
+          fbb.addOffset(25, profitOfPerInstallmentOffset);
+          fbb.addOffset(26, barirCodeOffset);
+          fbb.addOffset(27, walkOrderOffset);
           fbb.addOffset(28, barirNameEOffset);
           fbb.addOffset(29, barirNameOffset);
           fbb.addOffset(30, elakarNameOffset);
@@ -1782,17 +1812,17 @@ ModelDefinition getObjectBoxModel() {
           fbb.addOffset(32, dollCodeOffset);
           fbb.addOffset(33, groupNameOffset);
           fbb.addOffset(34, phoneNoOffset);
-          fbb.addInt32(35, object.cc);
-          fbb.addInt32(36, object.chainNo);
+          fbb.addOffset(35, ccOffset);
+          fbb.addOffset(36, chainNoOffset);
           fbb.addOffset(37, postOffset);
-          fbb.addInt32(38, object.ppost);
+          fbb.addOffset(38, ppostOffset);
           fbb.addOffset(39, nameOffset);
           fbb.addOffset(40, addressOffset);
           fbb.addOffset(41, kaliyaAcOffset);
           fbb.addOffset(42, commentOffset);
           fbb.addOffset(43, userNameOffset);
-          fbb.addInt32(44, object.backSodosso);
-          fbb.addInt32(45, object.nextSodosso);
+          fbb.addOffset(44, backSodossoOffset);
+          fbb.addOffset(45, nextSodossoOffset);
           fbb.addOffset(46, pouseRelationOffset);
           fbb.addOffset(47, pouseNameOffset);
           fbb.addOffset(48, pousePeshaOffset);
@@ -1800,13 +1830,13 @@ ModelDefinition getObjectBoxModel() {
           fbb.addOffset(50, branchOffset);
           fbb.addOffset(51, timeStampOffset);
           fbb.addOffset(52, submitByOffset);
-          fbb.addInt32(53, object.reBlPhoto);
-          fbb.addInt32(54, object.balanchingChk);
+          fbb.addOffset(53, reBlPhotoOffset);
+          fbb.addOffset(54, balanchingChkOffset);
           fbb.addOffset(55, superChkOffset);
           fbb.addOffset(56, activationOffset);
           fbb.addOffset(57, sonchoyCollectionDateOffset);
           fbb.addOffset(58, kistiCollectionDateOffset);
-          fbb.addInt32(59, object.balance);
+          fbb.addOffset(59, balanceOffset);
           fbb.finish(fbb.endTable());
           return object.id;
         },
@@ -1818,40 +1848,39 @@ ModelDefinition getObjectBoxModel() {
               id: const fb.Int64Reader().vTableGet(buffer, rootOffset, 4, 0),
               date: const fb.StringReader(asciiOptimization: true)
                   .vTableGet(buffer, rootOffset, 6, ''),
-              soCode:
-                  const fb.Int32Reader().vTableGet(buffer, rootOffset, 8, 0),
+              soCode: const fb.StringReader(asciiOptimization: true)
+                  .vTableGet(buffer, rootOffset, 8, ''),
               accountNo: const fb.StringReader(asciiOptimization: true)
                   .vTableGet(buffer, rootOffset, 10, ''),
               opCode: const fb.StringReader(asciiOptimization: true)
                   .vTableGet(buffer, rootOffset, 12, ''),
-              serial: const fb.Int32Reader()
+              serial: const fb.StringReader(asciiOptimization: true)
                   .vTableGetNullable(buffer, rootOffset, 14),
               sodossoName: const fb.StringReader(asciiOptimization: true)
                   .vTableGet(buffer, rootOffset, 16, ''),
-              sodossoStatus:
-                  const fb.Int32Reader().vTableGet(buffer, rootOffset, 18, 0),
+              sodossoStatus: const fb.StringReader(asciiOptimization: true)
+                  .vTableGet(buffer, rootOffset, 18, ''),
               pCode:
-                  const fb.Int32Reader().vTableGet(buffer, rootOffset, 20, 0),
-              collectionBar: const fb.StringReader(asciiOptimization: true)
-                  .vTableGet(buffer, rootOffset, 22, ''),
-              sonchoyCollectionStatus: const fb.Int32Reader().vTableGet(buffer, rootOffset, 24, 0),
-              kistiCollectionStatus: const fb.Int32Reader().vTableGet(buffer, rootOffset, 26, 0),
-              gatewayCheckSonchoy: const fb.Int32Reader().vTableGet(buffer, rootOffset, 28, 0),
-              gatewayCheckKisti: const fb.Int32Reader().vTableGet(buffer, rootOffset, 30, 0),
+                  const fb.StringReader(asciiOptimization: true).vTableGet(buffer, rootOffset, 20, ''),
+              collectionBar: const fb.StringReader(asciiOptimization: true).vTableGet(buffer, rootOffset, 22, ''),
+              sonchoyCollectionStatus: const fb.StringReader(asciiOptimization: true).vTableGet(buffer, rootOffset, 24, ''),
+              kistiCollectionStatus: const fb.StringReader(asciiOptimization: true).vTableGet(buffer, rootOffset, 26, ''),
+              gatewayCheckSonchoy: const fb.StringReader(asciiOptimization: true).vTableGet(buffer, rootOffset, 28, ''),
+              gatewayCheckKisti: const fb.StringReader(asciiOptimization: true).vTableGet(buffer, rootOffset, 30, ''),
               sep22: const fb.StringReader(asciiOptimization: true).vTableGet(buffer, rootOffset, 32, ''),
-              chk: const fb.Int32Reader().vTableGet(buffer, rootOffset, 34, 0),
-              sonchoyBookBl: const fb.Int32Reader().vTableGet(buffer, rootOffset, 36, 0),
-              onlineSonchoyBl: const fb.Int32Reader().vTableGet(buffer, rootOffset, 38, 0),
+              chk: const fb.StringReader(asciiOptimization: true).vTableGet(buffer, rootOffset, 34, ''),
+              sonchoyBookBl: const fb.StringReader(asciiOptimization: true).vTableGet(buffer, rootOffset, 36, ''),
+              onlineSonchoyBl: const fb.StringReader(asciiOptimization: true).vTableGet(buffer, rootOffset, 38, ''),
               sonchoyPorikkito: const fb.StringReader(asciiOptimization: true).vTableGet(buffer, rootOffset, 40, ''),
-              kistiBookBl: const fb.Int32Reader().vTableGet(buffer, rootOffset, 42, 0),
-              onlineKistiBl: const fb.Int32Reader().vTableGet(buffer, rootOffset, 44, 0),
+              kistiBookBl: const fb.StringReader(asciiOptimization: true).vTableGet(buffer, rootOffset, 42, ''),
+              onlineKistiBl: const fb.StringReader(asciiOptimization: true).vTableGet(buffer, rootOffset, 44, ''),
               kistiPorikkito: const fb.StringReader(asciiOptimization: true).vTableGet(buffer, rootOffset, 46, ''),
               porikkhito: const fb.StringReader(asciiOptimization: true).vTableGet(buffer, rootOffset, 48, ''),
               sonchoy: const fb.StringReader(asciiOptimization: true).vTableGet(buffer, rootOffset, 50, ''),
               kisti: const fb.StringReader(asciiOptimization: true).vTableGet(buffer, rootOffset, 52, ''),
-              profitOfPerInstallment: const fb.Int32Reader().vTableGet(buffer, rootOffset, 54, 0),
-              barirCode: const fb.Int32Reader().vTableGet(buffer, rootOffset, 56, 0),
-              walkOrder: const fb.Int32Reader().vTableGet(buffer, rootOffset, 58, 0),
+              profitOfPerInstallment: const fb.StringReader(asciiOptimization: true).vTableGet(buffer, rootOffset, 54, ''),
+              barirCode: const fb.StringReader(asciiOptimization: true).vTableGet(buffer, rootOffset, 56, ''),
+              walkOrder: const fb.StringReader(asciiOptimization: true).vTableGet(buffer, rootOffset, 58, ''),
               barirNameE: const fb.StringReader(asciiOptimization: true).vTableGet(buffer, rootOffset, 60, ''),
               barirName: const fb.StringReader(asciiOptimization: true).vTableGet(buffer, rootOffset, 62, ''),
               elakarName: const fb.StringReader(asciiOptimization: true).vTableGet(buffer, rootOffset, 64, ''),
@@ -1859,17 +1888,17 @@ ModelDefinition getObjectBoxModel() {
               dollCode: const fb.StringReader(asciiOptimization: true).vTableGet(buffer, rootOffset, 68, ''),
               groupName: const fb.StringReader(asciiOptimization: true).vTableGet(buffer, rootOffset, 70, ''),
               phoneNo: const fb.StringReader(asciiOptimization: true).vTableGet(buffer, rootOffset, 72, ''),
-              cc: const fb.Int32Reader().vTableGet(buffer, rootOffset, 74, 0),
-              chainNo: const fb.Int32Reader().vTableGet(buffer, rootOffset, 76, 0),
+              cc: const fb.StringReader(asciiOptimization: true).vTableGet(buffer, rootOffset, 74, ''),
+              chainNo: const fb.StringReader(asciiOptimization: true).vTableGet(buffer, rootOffset, 76, ''),
               post: const fb.StringReader(asciiOptimization: true).vTableGet(buffer, rootOffset, 78, ''),
-              ppost: const fb.Int32Reader().vTableGet(buffer, rootOffset, 80, 0),
+              ppost: const fb.StringReader(asciiOptimization: true).vTableGet(buffer, rootOffset, 80, ''),
               name: const fb.StringReader(asciiOptimization: true).vTableGet(buffer, rootOffset, 82, ''),
               address: const fb.StringReader(asciiOptimization: true).vTableGet(buffer, rootOffset, 84, ''),
               kaliyaAc: const fb.StringReader(asciiOptimization: true).vTableGet(buffer, rootOffset, 86, ''),
               comment: const fb.StringReader(asciiOptimization: true).vTableGet(buffer, rootOffset, 88, ''),
               userName: const fb.StringReader(asciiOptimization: true).vTableGet(buffer, rootOffset, 90, ''),
-              backSodosso: const fb.Int32Reader().vTableGet(buffer, rootOffset, 92, 0),
-              nextSodosso: const fb.Int32Reader().vTableGet(buffer, rootOffset, 94, 0),
+              backSodosso: const fb.StringReader(asciiOptimization: true).vTableGet(buffer, rootOffset, 92, ''),
+              nextSodosso: const fb.StringReader(asciiOptimization: true).vTableGet(buffer, rootOffset, 94, ''),
               pouseRelation: const fb.StringReader(asciiOptimization: true).vTableGet(buffer, rootOffset, 96, ''),
               pouseName: const fb.StringReader(asciiOptimization: true).vTableGet(buffer, rootOffset, 98, ''),
               pousePesha: const fb.StringReader(asciiOptimization: true).vTableGet(buffer, rootOffset, 100, ''),
@@ -1877,13 +1906,13 @@ ModelDefinition getObjectBoxModel() {
               branch: const fb.StringReader(asciiOptimization: true).vTableGet(buffer, rootOffset, 104, ''),
               timeStamp: const fb.StringReader(asciiOptimization: true).vTableGet(buffer, rootOffset, 106, ''),
               submitBy: const fb.StringReader(asciiOptimization: true).vTableGet(buffer, rootOffset, 108, ''),
-              reBlPhoto: const fb.Int32Reader().vTableGet(buffer, rootOffset, 110, 0),
-              balanchingChk: const fb.Int32Reader().vTableGet(buffer, rootOffset, 112, 0),
+              reBlPhoto: const fb.StringReader(asciiOptimization: true).vTableGet(buffer, rootOffset, 110, ''),
+              balanchingChk: const fb.StringReader(asciiOptimization: true).vTableGet(buffer, rootOffset, 112, ''),
               superChk: const fb.StringReader(asciiOptimization: true).vTableGet(buffer, rootOffset, 114, ''),
               activation: const fb.StringReader(asciiOptimization: true).vTableGet(buffer, rootOffset, 116, ''),
               sonchoyCollectionDate: const fb.StringReader(asciiOptimization: true).vTableGet(buffer, rootOffset, 118, ''),
               kistiCollectionDate: const fb.StringReader(asciiOptimization: true).vTableGet(buffer, rootOffset, 120, ''),
-              balance: const fb.Int32Reader().vTableGet(buffer, rootOffset, 122, 0));
+              balance: const fb.StringReader(asciiOptimization: true).vTableGet(buffer, rootOffset, 122, ''));
 
           return object;
         }),
@@ -2349,6 +2378,7 @@ ModelDefinition getObjectBoxModel() {
           final aOffset = fbb.writeString(object.a);
           final bOffset = fbb.writeString(object.b);
           final commentOffset = fbb.writeString(object.comment);
+          final adayTakaOffset = fbb.writeString(object.adayTaka);
           final currentSonchoyOffset = fbb.writeString(object.currentSonchoy);
           final jomakarirNameOffset = fbb.writeString(object.jomakarirName);
           final cashJomaOffset = fbb.writeString(object.cashJoma);
@@ -2422,7 +2452,7 @@ ModelDefinition getObjectBoxModel() {
           fbb.addOffset(43, aOffset);
           fbb.addOffset(44, bOffset);
           fbb.addOffset(45, commentOffset);
-          fbb.addFloat64(46, object.adayTaka);
+          fbb.addOffset(46, adayTakaOffset);
           fbb.addOffset(47, currentSonchoyOffset);
           fbb.addOffset(48, jomakarirNameOffset);
           fbb.addOffset(49, cashJomaOffset);
@@ -2509,7 +2539,7 @@ ModelDefinition getObjectBoxModel() {
               a: const fb.StringReader(asciiOptimization: true).vTableGet(buffer, rootOffset, 90, ''),
               b: const fb.StringReader(asciiOptimization: true).vTableGet(buffer, rootOffset, 92, ''),
               comment: const fb.StringReader(asciiOptimization: true).vTableGet(buffer, rootOffset, 94, ''),
-              adayTaka: const fb.Float64Reader().vTableGet(buffer, rootOffset, 96, 0),
+              adayTaka: const fb.StringReader(asciiOptimization: true).vTableGet(buffer, rootOffset, 96, ''),
               currentSonchoy: const fb.StringReader(asciiOptimization: true).vTableGet(buffer, rootOffset, 98, ''),
               jomakarirName: const fb.StringReader(asciiOptimization: true).vTableGet(buffer, rootOffset, 100, ''),
               cashJoma: const fb.StringReader(asciiOptimization: true).vTableGet(buffer, rootOffset, 102, ''),
@@ -2907,7 +2937,7 @@ class CollectionSheetEntity_ {
 
   /// see [CollectionSheetEntity.soCode]
   static final soCode =
-      QueryIntegerProperty<CollectionSheetEntity>(_entities[0].properties[2]);
+      QueryStringProperty<CollectionSheetEntity>(_entities[0].properties[2]);
 
   /// see [CollectionSheetEntity.accountNo]
   static final accountNo =
@@ -2919,7 +2949,7 @@ class CollectionSheetEntity_ {
 
   /// see [CollectionSheetEntity.serial]
   static final serial =
-      QueryIntegerProperty<CollectionSheetEntity>(_entities[0].properties[5]);
+      QueryStringProperty<CollectionSheetEntity>(_entities[0].properties[5]);
 
   /// see [CollectionSheetEntity.sodossoName]
   static final sodossoName =
@@ -2927,11 +2957,11 @@ class CollectionSheetEntity_ {
 
   /// see [CollectionSheetEntity.sodossoStatus]
   static final sodossoStatus =
-      QueryIntegerProperty<CollectionSheetEntity>(_entities[0].properties[7]);
+      QueryStringProperty<CollectionSheetEntity>(_entities[0].properties[7]);
 
   /// see [CollectionSheetEntity.pCode]
   static final pCode =
-      QueryIntegerProperty<CollectionSheetEntity>(_entities[0].properties[8]);
+      QueryStringProperty<CollectionSheetEntity>(_entities[0].properties[8]);
 
   /// see [CollectionSheetEntity.collectionBar]
   static final collectionBar =
@@ -2939,19 +2969,19 @@ class CollectionSheetEntity_ {
 
   /// see [CollectionSheetEntity.sonchoyCollectionStatus]
   static final sonchoyCollectionStatus =
-      QueryIntegerProperty<CollectionSheetEntity>(_entities[0].properties[10]);
+      QueryStringProperty<CollectionSheetEntity>(_entities[0].properties[10]);
 
   /// see [CollectionSheetEntity.kistiCollectionStatus]
   static final kistiCollectionStatus =
-      QueryIntegerProperty<CollectionSheetEntity>(_entities[0].properties[11]);
+      QueryStringProperty<CollectionSheetEntity>(_entities[0].properties[11]);
 
   /// see [CollectionSheetEntity.gatewayCheckSonchoy]
   static final gatewayCheckSonchoy =
-      QueryIntegerProperty<CollectionSheetEntity>(_entities[0].properties[12]);
+      QueryStringProperty<CollectionSheetEntity>(_entities[0].properties[12]);
 
   /// see [CollectionSheetEntity.gatewayCheckKisti]
   static final gatewayCheckKisti =
-      QueryIntegerProperty<CollectionSheetEntity>(_entities[0].properties[13]);
+      QueryStringProperty<CollectionSheetEntity>(_entities[0].properties[13]);
 
   /// see [CollectionSheetEntity.sep22]
   static final sep22 =
@@ -2959,15 +2989,15 @@ class CollectionSheetEntity_ {
 
   /// see [CollectionSheetEntity.chk]
   static final chk =
-      QueryIntegerProperty<CollectionSheetEntity>(_entities[0].properties[15]);
+      QueryStringProperty<CollectionSheetEntity>(_entities[0].properties[15]);
 
   /// see [CollectionSheetEntity.sonchoyBookBl]
   static final sonchoyBookBl =
-      QueryIntegerProperty<CollectionSheetEntity>(_entities[0].properties[16]);
+      QueryStringProperty<CollectionSheetEntity>(_entities[0].properties[16]);
 
   /// see [CollectionSheetEntity.onlineSonchoyBl]
   static final onlineSonchoyBl =
-      QueryIntegerProperty<CollectionSheetEntity>(_entities[0].properties[17]);
+      QueryStringProperty<CollectionSheetEntity>(_entities[0].properties[17]);
 
   /// see [CollectionSheetEntity.sonchoyPorikkito]
   static final sonchoyPorikkito =
@@ -2975,11 +3005,11 @@ class CollectionSheetEntity_ {
 
   /// see [CollectionSheetEntity.kistiBookBl]
   static final kistiBookBl =
-      QueryIntegerProperty<CollectionSheetEntity>(_entities[0].properties[19]);
+      QueryStringProperty<CollectionSheetEntity>(_entities[0].properties[19]);
 
   /// see [CollectionSheetEntity.onlineKistiBl]
   static final onlineKistiBl =
-      QueryIntegerProperty<CollectionSheetEntity>(_entities[0].properties[20]);
+      QueryStringProperty<CollectionSheetEntity>(_entities[0].properties[20]);
 
   /// see [CollectionSheetEntity.kistiPorikkito]
   static final kistiPorikkito =
@@ -2999,15 +3029,15 @@ class CollectionSheetEntity_ {
 
   /// see [CollectionSheetEntity.profitOfPerInstallment]
   static final profitOfPerInstallment =
-      QueryIntegerProperty<CollectionSheetEntity>(_entities[0].properties[25]);
+      QueryStringProperty<CollectionSheetEntity>(_entities[0].properties[25]);
 
   /// see [CollectionSheetEntity.barirCode]
   static final barirCode =
-      QueryIntegerProperty<CollectionSheetEntity>(_entities[0].properties[26]);
+      QueryStringProperty<CollectionSheetEntity>(_entities[0].properties[26]);
 
   /// see [CollectionSheetEntity.walkOrder]
   static final walkOrder =
-      QueryIntegerProperty<CollectionSheetEntity>(_entities[0].properties[27]);
+      QueryStringProperty<CollectionSheetEntity>(_entities[0].properties[27]);
 
   /// see [CollectionSheetEntity.barirNameE]
   static final barirNameE =
@@ -3039,11 +3069,11 @@ class CollectionSheetEntity_ {
 
   /// see [CollectionSheetEntity.cc]
   static final cc =
-      QueryIntegerProperty<CollectionSheetEntity>(_entities[0].properties[35]);
+      QueryStringProperty<CollectionSheetEntity>(_entities[0].properties[35]);
 
   /// see [CollectionSheetEntity.chainNo]
   static final chainNo =
-      QueryIntegerProperty<CollectionSheetEntity>(_entities[0].properties[36]);
+      QueryStringProperty<CollectionSheetEntity>(_entities[0].properties[36]);
 
   /// see [CollectionSheetEntity.post]
   static final post =
@@ -3051,7 +3081,7 @@ class CollectionSheetEntity_ {
 
   /// see [CollectionSheetEntity.ppost]
   static final ppost =
-      QueryIntegerProperty<CollectionSheetEntity>(_entities[0].properties[38]);
+      QueryStringProperty<CollectionSheetEntity>(_entities[0].properties[38]);
 
   /// see [CollectionSheetEntity.name]
   static final name =
@@ -3075,11 +3105,11 @@ class CollectionSheetEntity_ {
 
   /// see [CollectionSheetEntity.backSodosso]
   static final backSodosso =
-      QueryIntegerProperty<CollectionSheetEntity>(_entities[0].properties[44]);
+      QueryStringProperty<CollectionSheetEntity>(_entities[0].properties[44]);
 
   /// see [CollectionSheetEntity.nextSodosso]
   static final nextSodosso =
-      QueryIntegerProperty<CollectionSheetEntity>(_entities[0].properties[45]);
+      QueryStringProperty<CollectionSheetEntity>(_entities[0].properties[45]);
 
   /// see [CollectionSheetEntity.pouseRelation]
   static final pouseRelation =
@@ -3111,11 +3141,11 @@ class CollectionSheetEntity_ {
 
   /// see [CollectionSheetEntity.reBlPhoto]
   static final reBlPhoto =
-      QueryIntegerProperty<CollectionSheetEntity>(_entities[0].properties[53]);
+      QueryStringProperty<CollectionSheetEntity>(_entities[0].properties[53]);
 
   /// see [CollectionSheetEntity.balanchingChk]
   static final balanchingChk =
-      QueryIntegerProperty<CollectionSheetEntity>(_entities[0].properties[54]);
+      QueryStringProperty<CollectionSheetEntity>(_entities[0].properties[54]);
 
   /// see [CollectionSheetEntity.superChk]
   static final superChk =
@@ -3135,7 +3165,7 @@ class CollectionSheetEntity_ {
 
   /// see [CollectionSheetEntity.balance]
   static final balance =
-      QueryIntegerProperty<CollectionSheetEntity>(_entities[0].properties[59]);
+      QueryStringProperty<CollectionSheetEntity>(_entities[0].properties[59]);
 }
 
 /// [UploadPhotoSchema] entity fields to define ObjectBox queries.
@@ -3770,7 +3800,7 @@ class SonchoySchema_ {
 
   /// see [SonchoySchema.adayTaka]
   static final adayTaka =
-      QueryDoubleProperty<SonchoySchema>(_entities[4].properties[46]);
+      QueryStringProperty<SonchoySchema>(_entities[4].properties[46]);
 
   /// see [SonchoySchema.currentSonchoy]
   static final currentSonchoy =

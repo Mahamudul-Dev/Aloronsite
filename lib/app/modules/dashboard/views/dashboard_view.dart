@@ -37,11 +37,11 @@ class DashboardView extends GetView<DashboardController> {
                   ? PLACEHOLDER_IMAGE
                   : controller.getCurrentUser().user_photo),
           const SizedBox(height: 10),
-          const ProgressTab(
+          ProgressTab(
             title: 'Sonchoy Status',
             fileName: 'sonchoy',
-            totalFileCount: 100,
-            onlineUploadedFileCount: 7,
+            totalFileCount: controller.dbHelper.getSonchoySchema().length,
+            onlineUploadedFileCount: 5,
             progressBarColor: Colors.greenAccent,
             backgroundColor: Colors.green,
           ),

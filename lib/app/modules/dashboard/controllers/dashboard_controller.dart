@@ -7,6 +7,7 @@ import '../../upload_list/views/upload_list_view.dart';
 import '../views/dashboard_view.dart';
 
 class DashboardController extends GetxController {
+  final dbHelper = ObjectboxHelper();
   List<IconData> bottomBarIconList = [Icons.home_filled, Icons.upload_rounded];
   RxInt activeIndex = 0.obs;
   List<Widget> screens = [const DashboardView(), const UploadListView()];

@@ -26,7 +26,7 @@ class CollectionSheetView extends GetView<CollectionSheetController> {
                 showSearch(context: context, delegate: SearchbarView());
               }, icon:  const Icon(Icons.search_rounded));
             } else {
-              return ListView();
+              return const SizedBox.shrink();
             }
           })
         ],

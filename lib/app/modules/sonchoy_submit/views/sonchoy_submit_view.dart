@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:logger/logger.dart';
 
 import '../../../../database/objectbox_db/collection_sheet_schema.dart';
@@ -38,16 +39,20 @@ class _SonchoySubmitViewState extends State<SonchoySubmitView> {
     accountController = TextEditingController(text: collection.accountNo);
     enNameController = TextEditingController(text: collection.sodossoName);
     bnNameController = TextEditingController(text: collection.bSodossoName);
-    soStatusController = TextEditingController(text: collection.sodossoStatus.toString());
+    soStatusController =
+        TextEditingController(text: collection.sodossoStatus.toString());
     savingsController = TextEditingController(text: collection.sonchoy);
-    savingsCollectionController = TextEditingController(text: collection.sonchoyCollectionStatus.toString());
+    savingsCollectionController = TextEditingController(
+        text: collection.sonchoyCollectionStatus.toString());
     installmentController = TextEditingController(text: collection.kisti);
-    installmentCollectionController = TextEditingController(text: collection.kistiCollectionStatus.toString());
-    houseCodeController = TextEditingController(text: collection.barirCode.toString());
+    installmentCollectionController = TextEditingController(
+        text: collection.kistiCollectionStatus.toString());
+    houseCodeController =
+        TextEditingController(text: collection.barirCode.toString());
     ccController = TextEditingController(text: collection.cc.toString());
-    workerCodeController = TextEditingController(text: collection.soCode.toString());
+    workerCodeController =
+        TextEditingController(text: collection.soCode.toString());
     mobileController = TextEditingController(text: collection.phoneNo);
-
 
     Logger().i(collection.accountNo);
     super.initState();
@@ -57,189 +62,195 @@ class _SonchoySubmitViewState extends State<SonchoySubmitView> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(title: Text('submitPageTitle'.tr)),
-        body: ListView(
-          padding: const EdgeInsets.all(15),
-          physics: const BouncingScrollPhysics(),
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
+        body: Obx((){
+          if(controller.isLoading.value){
+            return Center(child: LoadingAnimationWidget.inkDrop(color: Theme.of(context).primaryColor, size: 30),);
+          } else{
+            return ListView(
+              padding: const EdgeInsets.all(15),
+              physics: const BouncingScrollPhysics(),
               children: [
-                SizedBox(
-                  width: 100.w,
-                  child: ElevatedButton(
-                      onPressed: () {},
-                      style: const ButtonStyle(
-                          backgroundColor:
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    SizedBox(
+                      width: 100.w,
+                      child: ElevatedButton(
+                          onPressed: () {},
+                          style: const ButtonStyle(
+                              backgroundColor:
                               MaterialStatePropertyAll(Colors.red)),
-                      child: Text(
-                        'Skip',
-                        style: Theme.of(context)
-                            .textTheme
-                            .labelMedium
-                            ?.copyWith(color: Colors.white),
-                      )),
-                )
+                          child: Text(
+                            'Skip',
+                            style: Theme.of(context)
+                                .textTheme
+                                .labelMedium
+                                ?.copyWith(color: Colors.white),
+                          )),
+                    )
+                  ],
+                ),
+                const SizedBox(
+                  height: 8,
+                ),
+                TextField(
+                  controller: accountController,
+                  decoration: InputDecoration(
+                      label: Text(
+                        'digitalHishabNo'.tr,
+                        style: Theme.of(context).textTheme.labelSmall,
+                      ),
+                      hintText: '',
+                      focusColor: Theme.of(context).primaryColor,
+                      focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(20),
+                          borderSide:
+                          BorderSide(color: Theme.of(context).primaryColor)),
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(20))),
+                ),
+                const SizedBox(
+                  height: 8,
+                ),
+                OutlineRoundedInputBox(
+                  label: 'nameE'.tr,
+                  hint: '',
+                  controller: enNameController,
+                ),
+                const SizedBox(
+                  height: 8,
+                ),
+                OutlineRoundedInputBox(
+                  label: 'nameB'.tr,
+                  hint: '',
+                  controller: bnNameController,
+                ),
+                const SizedBox(
+                  height: 8,
+                ),
+                OutlineRoundedInputBox(
+                  label: 'soStatus'.tr,
+                  hint: '',
+                  controller: soStatusController,
+                ),
+                const SizedBox(
+                  height: 8,
+                ),
+                OutlineRoundedInputBox(
+                  label: 'sonchoy'.tr,
+                  hint: '',
+                  controller: savingsController,
+                ),
+                const SizedBox(
+                  height: 8,
+                ),
+                OutlineRoundedInputBox(
+                  label: 'sonchoyCollectionStatus'.tr,
+                  hint: '',
+                  controller: savingsCollectionController,
+                ),
+                const SizedBox(
+                  height: 8,
+                ),
+                OutlineRoundedInputBox(
+                  label: 'installment'.tr,
+                  hint: '',
+                  controller: installmentController,
+                ),
+                const SizedBox(
+                  height: 8,
+                ),
+                OutlineRoundedInputBox(
+                  label: 'installmentCollectionStatus'.tr,
+                  hint: '',
+                  controller: installmentCollectionController,
+                ),
+                const SizedBox(
+                  height: 8,
+                ),
+                OutlineRoundedInputBox(
+                  label: 'houseCode'.tr,
+                  hint: '',
+                  controller: houseCodeController,
+                ),
+                const SizedBox(
+                  height: 8,
+                ),
+                OutlineRoundedInputBox(
+                  label: 'cc'.tr,
+                  hint: '',
+                  controller: ccController,
+                ),
+                const SizedBox(
+                  height: 8,
+                ),
+                OutlineRoundedInputBox(
+                  label: 'workerCode'.tr,
+                  hint: '',
+                  controller: workerCodeController,
+                ),
+                const SizedBox(
+                  height: 8,
+                ),
+                OutlineRoundedInputBox(
+                  label: 'mobile'.tr,
+                  hint: '',
+                  controller: mobileController,
+                ),
+                const SizedBox(height: 15),
+                ElevatedButton(
+                    onPressed: (){
+                      controller.submitSonchoy(collection, context);
+                    },
+                    style: const ButtonStyle(
+                        backgroundColor: MaterialStatePropertyAll(Colors.green)),
+                    child: Text(
+                      'Sonchoy Submit',
+                      style: Theme.of(context)
+                          .textTheme
+                          .labelSmall
+                          ?.copyWith(color: Colors.white),
+                    )),
+                const SizedBox(height: 8),
+                ElevatedButton(
+                    onPressed: () {},
+                    style: const ButtonStyle(
+                        backgroundColor: MaterialStatePropertyAll(Colors.orange)),
+                    child: Text(
+                      'Bokeya Sonchoy Submit',
+                      style: Theme.of(context)
+                          .textTheme
+                          .labelSmall
+                          ?.copyWith(color: Colors.white),
+                    )),
+                const SizedBox(height: 8),
+                ElevatedButton(
+                    onPressed: () {},
+                    style: const ButtonStyle(
+                        backgroundColor: MaterialStatePropertyAll(Colors.blue)),
+                    child: Text(
+                      'Kisti Submit',
+                      style: Theme.of(context)
+                          .textTheme
+                          .labelSmall
+                          ?.copyWith(color: Colors.white),
+                    )),
+                const SizedBox(height: 8),
+                ElevatedButton(
+                    onPressed: () {},
+                    style: const ButtonStyle(
+                        backgroundColor: MaterialStatePropertyAll(Colors.red)),
+                    child: Text(
+                      'Bokeya Kisti Submit',
+                      style: Theme.of(context)
+                          .textTheme
+                          .labelSmall
+                          ?.copyWith(color: Colors.white),
+                    ))
               ],
-            ),
-            const SizedBox(
-              height: 8,
-            ),
-      TextField(
-        controller: accountController,
-        decoration: InputDecoration(
-            label: Text(
-              'digitalHishabNo'.tr,
-              style: Theme.of(context).textTheme.labelSmall,
-            ),
-            hintText: '',
-            focusColor: Theme.of(context).primaryColor,
-            focusedBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(20),
-                borderSide: BorderSide(color: Theme.of(context).primaryColor)),
-            border: OutlineInputBorder(borderRadius: BorderRadius.circular(20))),
-      ),
-            // OutlineRoundedInputBox(
-            //   label: 'digitalHishabNo'.tr,
-            //   hint: '',
-            //   controller: controller.accountController,
-            // ),
-            const SizedBox(
-              height: 8,
-            ),
-            OutlineRoundedInputBox(
-              label: 'nameE'.tr,
-              hint: '',
-              controller: enNameController,
-            ),
-            const SizedBox(
-              height: 8,
-            ),
-            OutlineRoundedInputBox(
-              label: 'nameB'.tr,
-              hint: '',
-              controller: bnNameController,
-            ),
-            const SizedBox(
-              height: 8,
-            ),
-            OutlineRoundedInputBox(
-              label: 'soStatus'.tr,
-              hint: '',
-              controller: soStatusController,
-            ),
-            const SizedBox(
-              height: 8,
-            ),
-            OutlineRoundedInputBox(
-              label: 'sonchoy'.tr,
-              hint: '',
-              controller: savingsController,
-            ),
-            const SizedBox(
-              height: 8,
-            ),
-            OutlineRoundedInputBox(
-              label: 'sonchoyCollectionStatus'.tr,
-              hint: '',
-              controller: savingsCollectionController,
-            ),
-            const SizedBox(
-              height: 8,
-            ),
-            OutlineRoundedInputBox(
-              label: 'installment'.tr,
-              hint: '',
-              controller: installmentController,
-            ),
-            const SizedBox(
-              height: 8,
-            ),
-            OutlineRoundedInputBox(
-              label: 'installmentCollectionStatus'.tr,
-              hint: '',
-              controller: installmentCollectionController,
-            ),
-            const SizedBox(
-              height: 8,
-            ),
-            OutlineRoundedInputBox(
-              label: 'houseCode'.tr,
-              hint: '',
-              controller: houseCodeController,
-            ),
-            const SizedBox(
-              height: 8,
-            ),
-            OutlineRoundedInputBox(
-              label: 'cc'.tr,
-              hint: '',
-              controller: ccController,
-            ),
-            const SizedBox(
-              height: 8,
-            ),
-            OutlineRoundedInputBox(
-              label: 'workerCode'.tr,
-              hint: '',
-              controller: workerCodeController,
-            ),
-            const SizedBox(
-              height: 8,
-            ),
-            OutlineRoundedInputBox(
-              label: 'mobile'.tr,
-              hint: '',
-              controller: mobileController,
-            ),
-            const SizedBox(height: 15),
-            ElevatedButton(
-                onPressed: () {},
-                style: const ButtonStyle(
-                    backgroundColor: MaterialStatePropertyAll(Colors.green)),
-                child: Text(
-                  'Sonchoy Submit',
-                  style: Theme.of(context)
-                      .textTheme
-                      .labelSmall
-                      ?.copyWith(color: Colors.white),
-                )),
-            const SizedBox(height: 8),
-            ElevatedButton(
-                onPressed: () {},
-                style: const ButtonStyle(
-                    backgroundColor: MaterialStatePropertyAll(Colors.orange)),
-                child: Text(
-                  'Bokeya Sonchoy Submit',
-                  style: Theme.of(context)
-                      .textTheme
-                      .labelSmall
-                      ?.copyWith(color: Colors.white),
-                )),
-            const SizedBox(height: 8),
-            ElevatedButton(
-                onPressed: () {},
-                style: const ButtonStyle(
-                    backgroundColor: MaterialStatePropertyAll(Colors.blue)),
-                child: Text(
-                  'Kisti Submit',
-                  style: Theme.of(context)
-                      .textTheme
-                      .labelSmall
-                      ?.copyWith(color: Colors.white),
-                )),
-            const SizedBox(height: 8),
-            ElevatedButton(
-                onPressed: () {},
-                style: const ButtonStyle(
-                    backgroundColor: MaterialStatePropertyAll(Colors.red)),
-                child: Text(
-                  'Bokeya Kisti Submit',
-                  style: Theme.of(context)
-                      .textTheme
-                      .labelSmall
-                      ?.copyWith(color: Colors.white),
-                ))
-          ],
-        ));
+            );
+          }
+        })
+        );
   }
 }
