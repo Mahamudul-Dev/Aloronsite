@@ -25,7 +25,7 @@ class LoginView extends GetView<LoginController> {
                   Container(
                       color: Colors.blueAccent,
                       height: 250.h,
-                      padding: EdgeInsets.all(20),
+                      padding: const EdgeInsets.all(20),
                       width: MediaQuery.of(context).size.width,
                       child: Column(
                         mainAxisSize: MainAxisSize.max,

@@ -105,7 +105,8 @@ class CollectionSheetController extends GetxController {
         } else {
           Map<String, dynamic> query = {
             "soCode": soCodeController.value.text,
-            "collctionDay": selectedDay.value
+            "collectionDay": selectedDay.value,
+            "collectionDate": dateController.value.text
           };
 
           try {
@@ -139,6 +140,8 @@ class CollectionSheetController extends GetxController {
             return Future.value(dbHelper.getCollectionSheet());
           } catch (e) {
             isLoading.value = false;
+            Get.snackbar(
+                  'Opps!', 'Please check your network');
             Logger().e(e);
           }
           isLoading.value = false;

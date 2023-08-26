@@ -84,12 +84,12 @@ final _entities = <ModelEntity>[
         ModelProperty(
             id: const IdUid(11, 2564415181230228159),
             name: 'sonchoyCollectionStatus',
-            type: 9,
+            type: 6,
             flags: 0),
         ModelProperty(
             id: const IdUid(12, 5665712532915003125),
             name: 'kistiCollectionStatus',
-            type: 9,
+            type: 6,
             flags: 0),
         ModelProperty(
             id: const IdUid(13, 4327813667064721782),
@@ -2083,10 +2083,6 @@ ModelDefinition getObjectBoxModel() {
           final sodossoStatusOffset = fbb.writeString(object.sodossoStatus);
           final pCodeOffset = fbb.writeString(object.pCode);
           final collectionBarOffset = fbb.writeString(object.collectionBar);
-          final sonchoyCollectionStatusOffset =
-              fbb.writeString(object.sonchoyCollectionStatus);
-          final kistiCollectionStatusOffset =
-              fbb.writeString(object.kistiCollectionStatus);
           final gatewayCheckSonchoyOffset =
               fbb.writeString(object.gatewayCheckSonchoy);
           final gatewayCheckKistiOffset =
@@ -2152,8 +2148,8 @@ ModelDefinition getObjectBoxModel() {
           fbb.addOffset(7, sodossoStatusOffset);
           fbb.addOffset(8, pCodeOffset);
           fbb.addOffset(9, collectionBarOffset);
-          fbb.addOffset(10, sonchoyCollectionStatusOffset);
-          fbb.addOffset(11, kistiCollectionStatusOffset);
+          fbb.addInt64(10, object.sonchoyCollectionStatus);
+          fbb.addInt64(11, object.kistiCollectionStatus);
           fbb.addOffset(12, gatewayCheckSonchoyOffset);
           fbb.addOffset(13, gatewayCheckKistiOffset);
           fbb.addOffset(14, sep22Offset);
@@ -2228,8 +2224,8 @@ ModelDefinition getObjectBoxModel() {
               pCode:
                   const fb.StringReader(asciiOptimization: true).vTableGet(buffer, rootOffset, 20, ''),
               collectionBar: const fb.StringReader(asciiOptimization: true).vTableGet(buffer, rootOffset, 22, ''),
-              sonchoyCollectionStatus: const fb.StringReader(asciiOptimization: true).vTableGet(buffer, rootOffset, 24, ''),
-              kistiCollectionStatus: const fb.StringReader(asciiOptimization: true).vTableGet(buffer, rootOffset, 26, ''),
+              sonchoyCollectionStatus: const fb.Int64Reader().vTableGet(buffer, rootOffset, 24, 0),
+              kistiCollectionStatus: const fb.Int64Reader().vTableGet(buffer, rootOffset, 26, 0),
               gatewayCheckSonchoy: const fb.StringReader(asciiOptimization: true).vTableGet(buffer, rootOffset, 28, ''),
               gatewayCheckKisti: const fb.StringReader(asciiOptimization: true).vTableGet(buffer, rootOffset, 30, ''),
               sep22: const fb.StringReader(asciiOptimization: true).vTableGet(buffer, rootOffset, 32, ''),
@@ -3687,11 +3683,11 @@ class CollectionSheetEntity_ {
 
   /// see [CollectionSheetEntity.sonchoyCollectionStatus]
   static final sonchoyCollectionStatus =
-      QueryStringProperty<CollectionSheetEntity>(_entities[0].properties[10]);
+      QueryIntegerProperty<CollectionSheetEntity>(_entities[0].properties[10]);
 
   /// see [CollectionSheetEntity.kistiCollectionStatus]
   static final kistiCollectionStatus =
-      QueryStringProperty<CollectionSheetEntity>(_entities[0].properties[11]);
+      QueryIntegerProperty<CollectionSheetEntity>(_entities[0].properties[11]);
 
   /// see [CollectionSheetEntity.gatewayCheckSonchoy]
   static final gatewayCheckSonchoy =

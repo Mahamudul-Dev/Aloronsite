@@ -118,18 +118,16 @@ class CollectionSheetView extends GetView<CollectionSheetController> {
                         }
                         return CollectionItemView(
                           serial:
-                          controller.sheet[index - 1].serial.toString() ?? '',
+                          controller.sheet[index - 1].serial.toString(),
                           bSodossoName:
-                          controller.sheet[index - 1].bSodossoName ?? '',
-                          barirName: controller.sheet[index - 1].barirName ?? '',
+                          controller.sheet[index - 1].bSodossoName,
+                          barirName: controller.sheet[index - 1].barirName,
                           sonchoyStatus: controller.sheet[index - 1].sonchoyCollectionStatus
-                                  .toString() ??
-                              '',
+                                  .toString(),
                           kistiCollectionStatus: controller.sheet[index - 1].kistiCollectionStatus
-                                  .toString() ??
-                              '',
-                          sonchoy: controller.sheet[index - 1].sonchoy ?? '',
-                          kisti: controller.sheet[index - 1].kisti ?? '',
+                                  .toString(),
+                          sonchoy: controller.sheet[index - 1].sonchoy,
+                          kisti: controller.sheet[index - 1].kisti,
                           onPressed: () => Get.toNamed(Routes.RECIPT_UPLOAD,
                               arguments: {'object': controller.sheet[index - 1]}),
                         );

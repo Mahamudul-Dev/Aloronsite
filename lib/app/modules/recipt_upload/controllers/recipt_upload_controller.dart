@@ -59,7 +59,7 @@ class ReciptUploadController extends GetxController {
         if(response.statusCode == 200){
           isLoading.value = false;
           Get.snackbar('Success', response.data);
-          Logger().i(sheet.accountNo + '  ' + sheet.soCode.toString());
+          Logger().i('${sheet.accountNo}  ${sheet.soCode}');
           Get.offAndToNamed(Routes.SONCHOY_SUBMIT, arguments: {"object":sheet});
 
         } else {
@@ -75,7 +75,7 @@ class ReciptUploadController extends GetxController {
       final schema = UploadPhotoSchema(soCode: sheet.soCode.toString(), serial: sheet.serial.toString(), sodossoName: sheet.sodossoName, fileBytes: fileBytes!, fileName: image.value?.path ?? 'non', time: formatDateTime(DateTime.now()), photoStatus: 0);
       await dbHelper.savePhotoReceiptLocal(schema).then((value) {
         isLoading.value = false;
-        Logger().i(sheet.accountNo + '  ' + sheet.soCode.toString());
+        Logger().i('${sheet.accountNo}  ${sheet.soCode}');
         Get.offAndToNamed(Routes.SONCHOY_SUBMIT, arguments: {"object":sheet});
       });
     }

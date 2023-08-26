@@ -1,0 +1,32 @@
+soncho file & kisti file required!
+
+condition for submit button:
+
+      if -->
+            kisti > 0,
+            kisti_status == 30
+
+            check "3_sonchoy_collection" entry with search month && serial
+
+            if true? --> go to kisti form;
+      
+            if false -->
+                  kisti > 0,
+                  kisti_status == 7,
+
+                  if true --> go to kisti form;
+      
+      else --> 
+            if --> 
+                  sonchoy > 0,
+                  sonchoy_collection_status == 30,
+                        check "3_sonchoy_collection" entry with search month && serial
+
+                        if true? --> reverse in search list;
+                        if false? --> go to sonchoy form;
+
+                  if --> 
+                        sonchoy <=0,
+                        sonchoy_collection_status == 7,
+
+                        go to sonchoy form;

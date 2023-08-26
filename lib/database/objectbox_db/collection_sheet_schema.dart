@@ -29,10 +29,10 @@ class CollectionSheetEntity {
   String collectionBar;
 
   @Property()
-  String sonchoyCollectionStatus;
+  int sonchoyCollectionStatus;
 
   @Property()
-  String kistiCollectionStatus;
+  int kistiCollectionStatus;
 
   @Property()
   String gatewayCheckSonchoy;

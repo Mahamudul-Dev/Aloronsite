@@ -40,9 +40,9 @@ class ObjectboxHelper {
           pCode: sheet.pCode.toString(),
           collectionBar: sheet.collectionBar ?? '',
           sonchoyCollectionStatus:
-              sheet.sonchoyCollectionStatus.toString(),
+              sheet.sonchoyCollectionStatus??0,
           kistiCollectionStatus:
-              sheet.kistiCollectionStatus.toString(),
+              sheet.kistiCollectionStatus??0,
           gatewayCheckSonchoy:
               sheet.gatewayCheckSonchoy.toString(),
           gatewayCheckKisti: sheet.gatewayCheckKisti.toString(),

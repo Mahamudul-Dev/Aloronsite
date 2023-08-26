@@ -9,7 +9,7 @@ import '../../../widgets/outline_rounded_inputbox.dart';
 import '../controllers/sonchoy_submit_controller.dart';
 
 class SonchoySubmitView extends StatefulWidget {
-  SonchoySubmitView({Key? key}) : super(key: key);
+  const SonchoySubmitView({Key? key}) : super(key: key);
 
   @override
   State<SonchoySubmitView> createState() => _SonchoySubmitViewState();
@@ -35,7 +35,6 @@ class _SonchoySubmitViewState extends State<SonchoySubmitView> {
 
   @override
   void initState() {
-    // TODO: implement initState
     accountController = TextEditingController(text: collection.accountNo);
     enNameController = TextEditingController(text: collection.sodossoName);
     bnNameController = TextEditingController(text: collection.bSodossoName);
@@ -197,35 +196,21 @@ class _SonchoySubmitViewState extends State<SonchoySubmitView> {
                   hint: '',
                   controller: mobileController,
                 ),
-                const SizedBox(height: 15),
-                ElevatedButton(
-                    onPressed: (){
-                      controller.submitSonchoy(collection, context);
-                    },
-                    style: const ButtonStyle(
-                        backgroundColor: MaterialStatePropertyAll(Colors.green)),
-                    child: Text(
-                      'Sonchoy Submit',
-                      style: Theme.of(context)
-                          .textTheme
-                          .labelSmall
-                          ?.copyWith(color: Colors.white),
-                    )),
-                const SizedBox(height: 8),
-                ElevatedButton(
-                    onPressed: () {
-                      controller.submitBokeyaSonchoy(collection, context);
-                    },
-                    style: const ButtonStyle(
-                        backgroundColor: MaterialStatePropertyAll(Colors.orange)),
-                    child: Text(
-                      'Bokeya Sonchoy Submit',
-                      style: Theme.of(context)
-                          .textTheme
-                          .labelSmall
-                          ?.copyWith(color: Colors.white),
-                    )),
-                const SizedBox(height: 8),
+                
+                buttonSet()
+                
+              ],
+            );
+          }
+        })
+        );
+  }
+
+  Widget buttonSet(){
+    if(collection.sonchoyCollectionStatus == 7 && collection.kistiCollectionStatus == 7 && collection.kisti != '0'){
+      return Column(
+        children: [
+          const SizedBox(height: 15),
                 ElevatedButton(
                     onPressed: () {
                       controller.submitKisti(collection, context);
@@ -253,10 +238,44 @@ class _SonchoySubmitViewState extends State<SonchoySubmitView> {
                           .labelSmall
                           ?.copyWith(color: Colors.white),
                     ))
-              ],
-            );
-          }
-        })
-        );
+        ],
+      );
+    } else {
+      return Column(
+        children: [
+          const SizedBox(height: 15),
+
+                ElevatedButton(
+                    onPressed: (){
+                      controller.submitSonchoy(collection, context);
+                    },
+                    style: const ButtonStyle(
+                        backgroundColor: MaterialStatePropertyAll(Colors.green)),
+                    child: Text(
+                      'Sonchoy Submit',
+                      style: Theme.of(context)
+                          .textTheme
+                          .labelSmall
+                          ?.copyWith(color: Colors.white),
+                    )),
+
+                
+                const SizedBox(height: 8),
+                ElevatedButton(
+                    onPressed: () {
+                      controller.submitBokeyaSonchoy(collection, context);
+                    },
+                    style: const ButtonStyle(
+                        backgroundColor: MaterialStatePropertyAll(Colors.orange)),
+                    child: Text(
+                      'Bokeya Sonchoy Submit',
+                      style: Theme.of(context)
+                          .textTheme
+                          .labelSmall
+                          ?.copyWith(color: Colors.white),
+                    )),
+        ],
+      );
+    }
   }
 }
