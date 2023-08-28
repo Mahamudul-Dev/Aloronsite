@@ -1,4 +1,4 @@
-soncho file & kisti file required!
+sonchoy file & kisti file required!
 
 condition for submit button:
 
