@@ -19,11 +19,13 @@ class CollectionSheetView extends GetView<CollectionSheetController> {
         title: Text('collectionSheetTitle'.tr),
         centerTitle: true,
         actions: [
-          Obx((){
-            if(controller.isSheetLoaded.value || CacheDb().getSheetStatus()){
-              return IconButton(onPressed: (){
-                showSearch(context: context, delegate: SearchbarView());
-              }, icon:  const Icon(Icons.search_rounded));
+          Obx(() {
+            if (controller.isSheetLoaded.value || CacheDb().getSheetStatus()) {
+              return IconButton(
+                  onPressed: () {
+                    showSearch(context: context, delegate: SearchbarView());
+                  },
+                  icon: const Icon(Icons.search_rounded));
             } else {
               return const SizedBox.shrink();
             }
@@ -67,22 +69,26 @@ class CollectionSheetView extends GetView<CollectionSheetController> {
                                                 ),
                                                 actions: [
                                                   ElevatedButton(
-                                                      onPressed: () => Get.back(),
+                                                      onPressed: () =>
+                                                          Get.back(),
                                                       style: const ButtonStyle(
                                                           backgroundColor:
                                                               MaterialStatePropertyAll(
-                                                                  Colors.green)),
+                                                                  Colors
+                                                                      .green)),
                                                       child: Text(
                                                         'No',
                                                         style: Theme.of(context)
                                                             .textTheme
                                                             .labelSmall
                                                             ?.copyWith(
-                                                                color: Colors.white),
+                                                                color: Colors
+                                                                    .white),
                                                       )),
                                                   ElevatedButton(
                                                       onPressed: () =>
-                                                          controller.skipSheet(),
+                                                          controller
+                                                              .skipSheet(),
                                                       style: const ButtonStyle(
                                                           backgroundColor:
                                                               MaterialStatePropertyAll(
@@ -93,7 +99,8 @@ class CollectionSheetView extends GetView<CollectionSheetController> {
                                                             .textTheme
                                                             .labelSmall
                                                             ?.copyWith(
-                                                                color: Colors.white),
+                                                                color: Colors
+                                                                    .white),
                                                       ))
                                                 ],
                                               );
@@ -101,7 +108,8 @@ class CollectionSheetView extends GetView<CollectionSheetController> {
                                       },
                                       style: const ButtonStyle(
                                           backgroundColor:
-                                              MaterialStatePropertyAll(Colors.red)),
+                                              MaterialStatePropertyAll(
+                                                  Colors.red)),
                                       child: Text(
                                         'Skip Submit',
                                         style: Theme.of(context)
@@ -111,25 +119,26 @@ class CollectionSheetView extends GetView<CollectionSheetController> {
                                       )),
                                 ),
                                 const SizedBox(width: 8),
-                                Obx(() => Text('Result: ${controller.sheet.length}'))
+                                Obx(() =>
+                                    Text('Result: ${controller.sheet.length}'))
                               ],
                             ),
                           );
                         }
                         return CollectionItemView(
-                          serial:
-                          controller.sheet[index - 1].serial.toString(),
+                          serial: controller.sheet[index - 1].serial.toString(),
                           bSodossoName:
-                          controller.sheet[index - 1].bSodossoName,
+                              controller.sheet[index - 1].bSodossoName,
                           barirName: controller.sheet[index - 1].barirName,
-                          sonchoyStatus: controller.sheet[index - 1].sonchoyCollectionStatus
-                                  .toString(),
-                          kistiCollectionStatus: controller.sheet[index - 1].kistiCollectionStatus
-                                  .toString(),
+                          sonchoyStatus: controller
+                              .sheet[index - 1].sonchoyCollectionStatus
+                              .toString(),
+                          kistiCollectionStatus: controller
+                              .sheet[index - 1].kistiCollectionStatus
+                              .toString(),
                           sonchoy: controller.sheet[index - 1].sonchoy,
                           kisti: controller.sheet[index - 1].kisti,
-                          onPressed: () => Get.toNamed(Routes.RECIPT_UPLOAD,
-                              arguments: {'object': controller.sheet[index - 1]}),
+                          onPressed: () => controller.viewSheet(index),
                         );
                       },
                       separatorBuilder: (BuildContext context, int index) {

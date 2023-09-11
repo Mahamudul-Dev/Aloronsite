@@ -140,8 +140,7 @@ class CollectionSheetController extends GetxController {
             return Future.value(dbHelper.getCollectionSheet());
           } catch (e) {
             isLoading.value = false;
-            Get.snackbar(
-                  'Opps!', 'Please check your network');
+            Get.snackbar('Opps!', 'Please check your network');
             Logger().e(e);
           }
           isLoading.value = false;
@@ -161,5 +160,9 @@ class CollectionSheetController extends GetxController {
     isSheetLoaded.value = false;
     CacheDb().saveSheetStatus(isSheetLoaded.value);
     Get.toNamed(Routes.HOME);
+  }
+
+  void viewSheet(int index) {
+    Get.toNamed(Routes.RECIPT_UPLOAD, arguments: {'object': sheet[index - 1]});
   }
 }
